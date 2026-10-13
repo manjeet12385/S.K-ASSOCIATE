@@ -1,0 +1,3709 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#ffdcc3", "inverse-surface": "#2d3133", "on-tertiary-fixed-variant": "#7d3d00", "background": "#f7f9fb", "tertiary-fixed-dim": "#ffd5a7", "on-error": "#ffffff", "error-container": "#fff1e4", "outline-variant": "#c6c6cd", "primary": "#000000", "primary-container": "#d96b1d", "outline": "#76777d", "on-tertiary-fixed": "#410002", "on-secondary-container": "#4d2600", "error": "#d96b1d", "on-primary-fixed": "#fff8f1", "surface-container": "#eceef0", "on-secondary-fixed": "#2f1500", "on-primary-container": "#fff1e6", "on-background": "#191c1e", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#6e3900", "secondary": "#e27d1d", "secondary-container": "#f59d39", "primary-fixed": "#fde8d4", "on-primary": "#ffffff", "surface-tint": "#dc7a25", "tertiary-fixed": "#ffdad6", "secondary-fixed-dim": "#ffb77d", "tertiary": "#000000", "on-surface-variant": "#45464d", "on-surface": "#191c1e", "surface": "#f7f9fb", "surface-bright": "#f7f9fb", "surface-dim": "#d8dadc", "on-tertiary-container": "#d96b1d", "tertiary-container": "#3b1805", "inverse-primary": "#f7c594", "surface-container-lowest": "#ffffff", "surface-variant": "#e0e3e5", "on-error-container": "#7a3d09", "surface-container-highest": "#e0e3e5", "surface-container-low": "#f2f4f6", "primary-fixed-dim": "#bec6e0", "on-primary-fixed-variant": "#3f465c", "surface-container-high": "#e6e8ea", "on-secondary": "#ffffff", "inverse-on-surface": "#eff1f3" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-md": "1rem", "gutter": "1.5rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-sm": [ "Space Grotesk" ], "display-lg": [ "Space Grotesk" ], "label-md": [ "Space Grotesk" ], "label-sm": [ "Space Grotesk" ], "headline-lg": [ "Space Grotesk" ], "headline-md": [ "Space Grotesk" ], "title-md": [ "Hanken Grotesk" ], "body-sm": [ "Hanken Grotesk" ], "label-lg": [ "Space Grotesk" ], "display-lg-mobile": [ "Space Grotesk" ], "body-md": [ "Hanken Grotesk" ], "body-lg": [ "Hanken Grotesk" ] }, "fontSize": { "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "title-md": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" } ], "display-lg-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ] } } } };</script><style>
+  .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.25s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.5rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f59d39, #ffcb6b, #d96b1d, #f59d39);
+    opacity: 0;
+    transform: scaleX(0.4);
+    transform-origin: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    animation: navLineShift 1.6s ease-in-out infinite alternate;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .nav-link.active {
+    color: #191c1e;
+  }
+
+  header > div:first-child {
+    animation: topBarColorShift 4s steps(1, end) infinite;
+  }
+
+  @keyframes topBarColorShift {
+    0%, 100% { background-color: #d96b1d; }
+    25% { background-color: #ed7d18; }
+    50% { background-color: #e89b20; }
+    75% { background-color: #c96216; }
+  }
+
+  body,
+  .bg-surface {
+    background-color: #fff9e8 !important;
+  }
+
+  .bg-surface-container-lowest {
+    background-color: #fffdf5 !important;
+  }
+
+  .bg-surface-container-low {
+    background-color: #fff5dd !important;
+  }
+
+  .bg-surface-container {
+    background-color: #f3ebdb !important;
+  }
+
+  .bg-surface-container-high {
+    background-color: #f1e7d4 !important;
+  }
+
+  .bg-surface-container-highest,
+  .bg-surface-variant {
+    background-color: #e8dfce !important;
+  }
+
+  .bg-secondary-container,
+  .bg-secondary-fixed {
+    background-color: #f6b930 !important;
+  }
+
+  .text-on-surface,
+  .text-on-background {
+    color: #28231d !important;
+  }
+
+  .text-on-surface-variant {
+    color: #62584b !important;
+  }
+
+  .text-on-secondary-container {
+    color: #34230e !important;
+  }
+
+  .kpi-carousel {
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  .kpi-carousel-track {
+    display: flex;
+    width: max-content;
+    animation: kpiCardsScroll 32s linear infinite;
+  }
+
+  .kpi-carousel:hover .kpi-carousel-track {
+    animation-play-state: paused;
+  }
+
+  .kpi-card-group {
+    display: flex;
+    flex: 0 0 100%;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 0.65rem;
+    border: 1px solid rgba(217, 107, 29, 0.24);
+    border-radius: 0.75rem;
+    background: #fff8e8;
+    box-shadow: 0 4px 16px rgba(100, 65, 20, 0.08);
+  }
+
+  .kpi-card {
+    flex: 1 1 0;
+    min-width: 0;
+    border: 1px solid rgba(100, 65, 20, 0.12);
+  }
+
+  .kpi-card-group .kpi-card:nth-child(1),
+  .kpi-card-group .kpi-card:nth-child(4) {
+    background: #df741c !important;
+    color: #fffaf0 !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(2) {
+    background: #f6bd35 !important;
+    color: #34230e !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(3) {
+    background: #f3d99e !important;
+    color: #34230e !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(1) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(4) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(1) .text-secondary,
+  .kpi-card-group .kpi-card:nth-child(4) .text-secondary {
+    color: #fffaf0 !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(1) .font-headline-md,
+  .kpi-card-group .kpi-card:nth-child(4) .font-headline-md {
+    color: #fffaf0 !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(2) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(3) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(2) .text-secondary,
+  .kpi-card-group .kpi-card:nth-child(3) .text-secondary {
+    color: #493414 !important;
+  }
+
+  @keyframes kpiCardsScroll {
+    to { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 767px) {
+    .kpi-card-group {
+      flex-basis: auto;
+      padding-right: 0;
+    }
+
+    .kpi-card {
+      flex: 0 0 78vw;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kpi-carousel-track {
+      animation: none;
+    }
+  }
+
+  .project-slider {
+    position: relative;
+    overflow: hidden;
+    container-type: inline-size;
+    width: 100%;
+    max-width: none;
+    margin: 1rem 0 0;
+    border: 1px solid rgba(100, 65, 20, 0.16);
+    border-radius: 0.5rem;
+    background: #fff9e8;
+    box-shadow: 0 8px 24px rgba(40, 35, 29, 0.16);
+  }
+
+  .project-slider-track {
+    display: flex;
+    width: max-content;
+    animation: projectCarouselScroll var(--project-carousel-duration, 114s) linear infinite;
+  }
+
+  .project-slider:hover .project-slider-track {
+    animation-play-state: paused;
+  }
+
+  .project-slide {
+    position: relative;
+    flex: 0 0 calc(100cqi / 3);
+    height: clamp(150px, 20vw, 220px);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #fff9e8;
+  }
+
+  .project-slide img,
+  .project-slide video {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
+  .video-preview-play {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    border: 2px solid #fffaf0;
+    border-radius: 50%;
+    color: #34230e;
+    background: #f6bd35;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+  }
+
+  .video-preview-play:hover {
+    background: #fffaf0;
+  }
+
+  .project-slide.is-playing .video-preview-play {
+    display: none;
+  }
+
+  .project-slider-controls {
+    position: absolute;
+    inset: 50% 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.75rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .project-slider-button {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+    color: #34230e;
+    background: #fff9e8;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .project-slider-button:hover {
+    background: #f6bd35;
+  }
+
+  .project-slider-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    color: #fffaf0;
+    background: #df741c;
+  }
+
+  .hero-trust-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding: 0.65rem;
+    border: 1px solid rgba(217, 107, 29, 0.2);
+    border-radius: 0.5rem;
+    background: #fffdf5;
+    box-shadow: 0 4px 16px rgba(100, 65, 20, 0.08);
+  }
+
+  .hero-trust-container > div {
+    flex: 1 1 210px;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.35rem;
+  }
+
+  .hero-trust-container > div:nth-child(1) {
+    background: #df741c;
+  }
+
+  .hero-trust-container > div:nth-child(2) {
+    background: #f6bd35;
+  }
+
+  .hero-trust-container > div:nth-child(3) {
+    background: #f3d99e;
+  }
+
+  .hero-trust-container > div:nth-child(1) .text-secondary-container,
+  .hero-trust-container > div:nth-child(1) .text-outline-variant {
+    color: #fffaf0 !important;
+  }
+
+  .hero-trust-container > div:nth-child(2) {
+    color: #34230e;
+  }
+
+  .hero-trust-container > div:nth-child(3) {
+    color: #34230e;
+  }
+
+  @keyframes projectCarouselScroll {
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-slider-track {
+      animation: none;
+    }
+  }
+
+  .service-orbit-section {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 0.5rem;
+  }
+
+  .service-orbit {
+    position: relative;
+    width: min(100%, 320px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+
+  .service-orbit::before,
+  .service-orbit::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(217, 107, 29, 0.35);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .service-orbit::before {
+    inset: 7%;
+    border-style: dashed;
+  }
+
+  .service-orbit::after {
+    inset: 18%;
+    border-color: rgba(246, 185, 48, 0.7);
+  }
+
+  .service-orbit-center {
+    position: relative;
+    z-index: 2;
+    width: 104px;
+    height: 104px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #df741c;
+    border-radius: 50%;
+    background: #fffdf5;
+    box-shadow: 0 4px 18px rgba(100, 65, 20, 0.16);
+    text-align: center;
+  }
+
+  .service-orbit-center img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+
+  .service-orbit-track {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    animation: serviceOrbitSpin 28s linear infinite;
+  }
+
+  .service-orbit:hover .service-orbit-track,
+  .service-orbit:focus-within .service-orbit-track,
+  .service-orbit:hover .service-orbit-label,
+  .service-orbit:focus-within .service-orbit-label {
+    animation-play-state: paused;
+  }
+
+  .service-orbit-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 164px;
+    min-height: 58px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+  }
+
+  .service-orbit-link:nth-child(1) {
+    transform: translate(-50%, calc(-50% - 128px));
+  }
+
+  .service-orbit-link:nth-child(2) {
+    transform: translate(calc(-50% + 128px), -50%);
+  }
+
+  .service-orbit-link:nth-child(3) {
+    transform: translate(-50%, calc(-50% + 128px));
+  }
+
+  .service-orbit-link:nth-child(4) {
+    transform: translate(calc(-50% - 128px), -50%);
+  }
+
+  .service-orbit-label {
+    display: flex;
+    width: 100%;
+    min-height: 58px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.65rem;
+    border: 2px solid #fffdf5;
+    border-radius: 999px;
+    color: #34230e;
+    background: #f6bd35;
+    box-shadow: 0 3px 12px rgba(100, 65, 20, 0.24);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    animation: serviceOrbitCounterSpin 28s linear infinite;
+  }
+
+  .service-orbit-link:nth-child(1) .service-orbit-label,
+  .service-orbit-link:nth-child(4) .service-orbit-label {
+    color: #fffaf0;
+    background: #c75b0d;
+  }
+
+  .service-orbit-link:nth-child(3) .service-orbit-label {
+    background: #f3d99e;
+  }
+
+  .service-orbit-label .material-symbols-outlined {
+    flex: 0 0 auto;
+    font-size: 1.1rem;
+  }
+
+  @keyframes serviceOrbitSpin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes serviceOrbitCounterSpin {
+    to { transform: rotate(-360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .service-orbit-track,
+    .service-orbit-label {
+      animation: none;
+    }
+  }
+
+  .main-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
+  .main-navigation .nav-link {
+    white-space: nowrap;
+  }
+
+  .services-nav-item {
+    position: relative;
+    flex: 0 0 auto;
+  }
+
+  .services-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .services-menu-toggle .material-symbols-outlined {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .services-nav-item.is-open .services-menu-toggle .material-symbols-outlined {
+    transform: rotate(180deg);
+  }
+
+  .services-dropdown {
+    position: fixed;
+    top: 9rem;
+    left: 1rem;
+    z-index: 1000;
+    display: none;
+    width: min(18rem, calc(100vw - 2rem));
+    max-height: min(60vh, 25rem);
+    overflow-y: auto;
+    padding: 0.4rem;
+    border: 1px solid rgba(156, 39, 176, 0.18);
+    border-radius: 0.6rem;
+    background: #fffef8;
+    box-shadow: 0 12px 28px rgba(37, 33, 43, 0.18);
+    overscroll-behavior: contain;
+  }
+
+  .services-nav-item.is-open .services-dropdown {
+    display: block;
+  }
+
+  .services-dropdown a {
+    display: block;
+    padding: 0.75rem 0.8rem;
+    border-radius: 0.35rem;
+    color: #34303b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+    white-space: normal;
+  }
+
+  .services-dropdown a:hover,
+  .services-dropdown a:focus-visible {
+    color: #7b1fa2;
+    background: #f3e5f5;
+    outline: none;
+  }
+
+  section[id],
+  div[id="our-work"] {
+    scroll-margin-top: 8rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    header > div:nth-child(2) {
+      height: 5rem !important;
+      min-height: 5rem;
+      flex-wrap: nowrap;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    header > div:nth-child(2) > div:first-child {
+      flex: 0 1 auto;
+      min-width: 0;
+      gap: 0.55rem;
+    }
+
+    header > div:nth-child(2) > div:first-child img {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+
+    header > div:nth-child(2) > div:first-child span:first-child {
+      font-size: 1rem;
+    }
+
+    .main-navigation {
+      order: 0;
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      gap: 0.55rem;
+      min-width: 0;
+      font-size: 0.66rem;
+    }
+
+    main {
+      padding-top: 7.5rem !important;
+    }
+
+    section[id],
+    div[id="our-work"] {
+      scroll-margin-top: 8rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    header > div:nth-child(2) {
+      height: 5rem !important;
+      min-height: 5rem;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    header > div:nth-child(2) > div:first-child {
+      flex: 0 1 37%;
+      min-width: 0;
+      gap: 0.4rem;
+    }
+
+    header > div:nth-child(2) > div:first-child img {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+
+    header > div:nth-child(2) > div:first-child span:first-child {
+      font-size: 0.82rem;
+    }
+
+    header > div:nth-child(2) > div:first-child span:last-child {
+      display: none;
+    }
+
+    .main-navigation {
+      order: 0;
+      flex: 1 1 63%;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.4rem 0;
+      scrollbar-width: thin;
+      font-size: 0.6rem;
+    }
+
+    main {
+      padding-top: 7.5rem !important;
+    }
+
+    section[id],
+    div[id="our-work"] {
+      scroll-margin-top: 8rem;
+    }
+  }
+
+  header > div:first-child .text-secondary-container,
+  header > div:first-child .text-on-primary-container {
+    color: #fff4cf !important;
+  }
+
+  .top-action-pill {
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.22s ease, background 0.22s ease, opacity 0.22s ease;
+  }
+
+  .top-action-pill:hover {
+    transform: translateY(-1px);
+  }
+
+  @keyframes navLineShift {
+    0% { background: linear-gradient(90deg, #f59d39, #ffb870, #d96b1d); }
+    25% { background: linear-gradient(90deg, #ffb870, #f59d39, #f78a22); }
+    50% { background: linear-gradient(90deg, #d96b1d, #ffcb6b, #f59d39); }
+    75% { background: linear-gradient(90deg, #f78a22, #ffcb6b, #d96b1d); }
+    100% { background: linear-gradient(90deg, #f59d39, #d96b1d, #ffb870); }
+  }
+
+  body,
+  .bg-surface,
+  main {
+    background-color: #ffffff !important;
+  }
+
+  .bg-surface-container-low {
+    background-color: #f8f7fb !important;
+  }
+
+  .bg-surface-container,
+  .bg-surface-container-high,
+  .bg-surface-container-highest,
+  .bg-surface-variant {
+    background-color: #f1eef5 !important;
+  }
+
+  .text-on-surface,
+  .text-on-background {
+    color: #25212b !important;
+  }
+
+  .text-on-surface-variant {
+    color: #5f5968 !important;
+  }
+
+  .text-secondary {
+    color: #9c27b0 !important;
+  }
+
+  .bg-secondary-container,
+  .bg-secondary-fixed {
+    background-color: #f28c00 !important;
+  }
+
+  header > div:first-child {
+    animation: none !important;
+    background-color: #9c27b0 !important;
+    border-color: #9c27b0 !important;
+  }
+
+  header > div:first-child,
+  header > div:first-child span,
+  header > div:first-child a,
+  header > div:first-child .text-secondary-container,
+  header > div:first-child .text-on-primary-container {
+    color: #ffffff !important;
+  }
+
+  .nav-link::after {
+    background: linear-gradient(90deg, #9c27b0, #ce93d8, #f28c00) !important;
+  }
+
+  .kpi-card-group {
+    border-color: rgba(156, 39, 176, 0.2);
+    background: #faf7fc;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(1),
+  .kpi-card-group .kpi-card:nth-child(4) {
+    background: #9c27b0 !important;
+    color: #ffffff !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(2) {
+    background: #f28c00 !important;
+    color: #34230e !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(3) {
+    background: #f3e5f5 !important;
+    color: #34230e !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(1) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(4) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(1) .text-secondary,
+  .kpi-card-group .kpi-card:nth-child(4) .text-secondary,
+  .kpi-card-group .kpi-card:nth-child(1) .font-headline-md,
+  .kpi-card-group .kpi-card:nth-child(4) .font-headline-md {
+    color: #ffffff !important;
+  }
+
+  .kpi-card-group .kpi-card:nth-child(2) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(3) .text-on-surface-variant,
+  .kpi-card-group .kpi-card:nth-child(2) .text-secondary,
+  .kpi-card-group .kpi-card:nth-child(3) .text-secondary {
+    color: #493414 !important;
+  }
+
+  .project-slider {
+    border-color: rgba(156, 39, 176, 0.22);
+    background: #faf7fc;
+  }
+
+  .project-slide {
+    background: #faf7fc;
+  }
+
+  .project-slider-footer {
+    background: #9c27b0;
+  }
+
+  .video-preview-play,
+  .project-slider-button:hover {
+    background: #f28c00;
+  }
+
+  .hero-trust-container {
+    display: none !important;
+    border-color: rgba(156, 39, 176, 0.2);
+    background: #ffffff;
+  }
+
+  .top-action-pill {
+    display: none !important;
+  }
+
+  .hero-trust-container > div:nth-child(1) {
+    background: #9c27b0;
+  }
+
+  .hero-trust-container > div:nth-child(2) {
+    background: #f3e5f5;
+    color: #34230e;
+  }
+
+  .hero-trust-container > div:nth-child(3) {
+    background: #fff0d9;
+    color: #34230e;
+  }
+
+  .service-orbit::before,
+  .service-orbit::after {
+    border-color: rgba(156, 39, 176, 0.32);
+  }
+
+  .service-orbit::after {
+    border-color: rgba(242, 140, 0, 0.55);
+  }
+
+  .service-orbit-center {
+    border-color: #9c27b0;
+    background: #ffffff;
+  }
+
+  .service-orbit-label {
+    background: #f28c00;
+    border-color: #ffffff;
+    color: #34230e;
+  }
+
+  .service-orbit-link:nth-child(1) .service-orbit-label,
+  .service-orbit-link:nth-child(4) .service-orbit-label {
+    color: #ffffff;
+    background: #9c27b0;
+  }
+
+  .service-orbit-link:nth-child(3) .service-orbit-label {
+    background: #f3e5f5;
+  }
+
+  .hero-service-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .hero-service-summary a {
+    display: block;
+    min-width: 0;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(156, 39, 176, 0.16);
+    border-radius: 0.45rem;
+    color: #25212b;
+    background: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(37, 33, 43, 0.06);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hero-service-summary a:hover,
+  .hero-service-summary a:focus-visible {
+    border-color: #9c27b0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(156, 39, 176, 0.14);
+    outline: none;
+  }
+
+  .hero-service-summary strong {
+    display: block;
+    color: #7b1fa2;
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+
+  .hero-service-summary span {
+    display: block;
+    margin-top: 0.2rem;
+    color: #5f5968;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .hero-heading {
+    max-width: 100%;
+    margin-block: 0.2rem 0.55rem;
+    font-size: clamp(1.6rem, 3vw, 2.35rem) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .home-info-card {
+    border: 1px solid rgba(156, 39, 176, 0.14);
+    border-radius: 0.65rem;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 33, 43, 0.06);
+  }
+
+  .home-service-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(156, 39, 176, 0.14);
+    border-radius: 0.65rem;
+    color: inherit;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 33, 43, 0.06);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .home-service-card:hover,
+  .home-service-card:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(156, 39, 176, 0.14);
+    outline: 2px solid #9c27b0;
+    outline-offset: 2px;
+  }
+
+  .home-service-card img {
+    display: block;
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+  }
+
+  .home-service-card ul {
+    display: grid;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    color: #514a59;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .home-service-card li {
+    position: relative;
+    padding-left: 1.1rem;
+  }
+
+  .home-service-card li::before {
+    position: absolute;
+    left: 0;
+    color: #9c27b0;
+    content: "•";
+    font-weight: 700;
+  }
+
+  .home-info-icon {
+    display: grid;
+    width: 2.6rem;
+    height: 2.6rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 0.55rem;
+    color: #7b1fa2;
+    background: #f3e5f5;
+  }
+
+  .home-faq details {
+    border: 1px solid rgba(156, 39, 176, 0.16);
+    border-radius: 0.5rem;
+    background: #ffffff;
+  }
+
+  .home-faq details[open] {
+    border-color: rgba(156, 39, 176, 0.42);
+    box-shadow: 0 3px 12px rgba(156, 39, 176, 0.08);
+  }
+
+  .home-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    color: #302a36;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .home-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .home-faq summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    color: #9c27b0;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .home-faq details[open] summary::after {
+    content: "−";
+  }
+
+  .home-faq details p {
+    padding: 0 1rem 1rem;
+  }
+
+  .main-navigation > .nav-link,
+  .services-menu-toggle {
+    min-height: 2.25rem;
+    padding: 0.4rem 0.55rem;
+    border-radius: 0.45rem;
+    color: #514a59;
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .main-navigation > .nav-link::after,
+  .services-menu-toggle::after {
+    right: 0.55rem;
+    bottom: 0.12rem;
+    left: 0.55rem;
+    height: 2px;
+    background: #f28c00;
+    animation: none;
+  }
+
+  .main-navigation > .nav-link:hover,
+  .main-navigation > .nav-link:focus-visible,
+  .services-menu-toggle:hover,
+  .services-menu-toggle:focus-visible {
+    color: #7b1fa2;
+    background: #f3e5f5;
+    outline: none;
+  }
+
+  .main-navigation > .nav-link.is-current,
+  .services-menu-toggle.is-current,
+  .services-nav-item.is-open .services-menu-toggle {
+    color: #ffffff !important;
+    background: #9c27b0 !important;
+    box-shadow: 0 3px 9px rgba(123, 31, 162, 0.22);
+  }
+
+  .main-navigation > .nav-link.is-current::after,
+  .services-menu-toggle.is-current::after {
+    opacity: 1;
+    background: #f28c00;
+    transform: scaleX(1);
+  }
+
+  .services-dropdown a[aria-current="page"] {
+    color: #ffffff;
+    background: #9c27b0;
+  }
+
+  .hero-service-summary a,
+  .home-info-card,
+  .service-orbit-link,
+  .project-slider-button,
+  main a[href^="tel:"],
+  main a[href*="wa.me"],
+  main a[href="#quotation-calculator"],
+  main a[href*="maps.google"] {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .hero-service-summary a:hover,
+  .hero-service-summary a:focus-visible,
+  .home-info-card:hover,
+  .service-orbit-link:hover .service-orbit-label {
+    border-color: #f28c00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(123, 31, 162, 0.16);
+  }
+
+  .hero-service-summary a:active,
+  .service-orbit-link:active .service-orbit-label,
+  main a[href^="tel:"]:active,
+  main a[href*="wa.me"]:active,
+  main a[href="#quotation-calculator"]:active,
+  main a[href*="maps.google"]:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  main a[href^="tel:"]:hover,
+  main a[href*="wa.me"]:hover,
+  main a[href="#quotation-calculator"]:hover,
+  main a[href*="maps.google"]:hover {
+    filter: brightness(1.06);
+    box-shadow: 0 5px 14px rgba(37, 33, 43, 0.16);
+  }
+
+  .home-faq summary:hover,
+  .home-faq summary:focus-visible {
+    color: #7b1fa2;
+    outline: none;
+  }
+
+  .home-faq details[open] summary {
+    color: #7b1fa2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .main-navigation > .nav-link,
+    .services-menu-toggle,
+    .hero-service-summary a,
+    .home-info-card,
+    .service-orbit-link,
+    .project-slider-button,
+    main a[href^="tel:"],
+    main a[href*="wa.me"],
+    main a[href="#quotation-calculator"],
+    main a[href*="maps.google"] {
+      transition: none;
+    }
+  }
+
+  .main-navigation {
+    display: flex !important;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    header > div:nth-child(2) {
+      height: 5rem !important;
+      min-height: 5rem;
+      flex-wrap: nowrap;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .main-navigation {
+      order: 0;
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      gap: 0.55rem;
+      min-width: 0;
+      scrollbar-width: none;
+      font-size: 0.66rem;
+    }
+
+    header > div:nth-child(2) > div:first-child img {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+
+    main {
+      padding-top: 7.5rem !important;
+    }
+
+    section[id],
+    div[id="our-work"] {
+      scroll-margin-top: 8rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    header > div:nth-child(2) {
+      height: 5rem !important;
+      min-height: 5rem;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    header > div:nth-child(2) > div:first-child {
+      flex: 0 1 37%;
+      min-width: 0;
+      gap: 0.4rem;
+    }
+
+    header > div:nth-child(2) > div:first-child img {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+
+    header > div:nth-child(2) > div:first-child span:first-child {
+      font-size: 0.82rem;
+    }
+
+    header > div:nth-child(2) > div:first-child span:last-child {
+      display: none;
+    }
+
+    .main-navigation {
+      order: 0;
+      flex: 1 1 63%;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.4rem 0;
+      scrollbar-width: thin;
+      font-size: 0.6rem;
+    }
+
+    main {
+      padding-top: 7.5rem !important;
+    }
+
+    section[id],
+    div[id="our-work"] {
+      scroll-margin-top: 8rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    header > div:nth-child(2) {
+      height: auto !important;
+      min-height: 0;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 0.35rem 0.75rem;
+      padding: 0.55rem 1rem !important;
+    }
+
+    header > div:nth-child(2) > div:first-child {
+      flex: 1 1 100%;
+      min-width: 0;
+      gap: 0.6rem;
+    }
+
+    header > div:nth-child(2) > div:first-child img {
+      width: 2.9rem;
+      height: 2.9rem;
+      flex: 0 0 auto;
+    }
+
+    header > div:nth-child(2) > div:first-child span:first-child {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    header > div:nth-child(2) > div:first-child span:last-child {
+      display: block;
+      overflow: hidden;
+      font-size: 0.65rem;
+      line-height: 1.25;
+      text-overflow: ellipsis;
+    }
+
+    .main-navigation {
+      order: 1;
+      flex: 1 1 100%;
+      justify-content: flex-start;
+      gap: 0.35rem;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.15rem 0 0.25rem;
+      scrollbar-width: thin;
+      font-size: 0.78rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .main-navigation > .nav-link,
+    .services-menu-toggle {
+      min-height: 2.5rem;
+      padding: 0.45rem 0.65rem;
+    }
+
+    main {
+      padding-top: 11.25rem !important;
+    }
+
+    section[id],
+    div[id="our-work"] {
+      scroll-margin-top: 10rem;
+    }
+
+    main .px-margin {
+      padding-right: 1rem !important;
+      padding-left: 1rem !important;
+    }
+
+    .font-body-md,
+    .text-body-md {
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+    }
+
+    .font-body-sm,
+    .text-body-sm {
+      font-size: 0.9rem !important;
+      line-height: 1.5 !important;
+    }
+
+    .font-label-sm,
+    .text-label-sm {
+      font-size: 0.75rem !important;
+      line-height: 1.4 !important;
+    }
+
+    .font-label-md,
+    .text-label-md {
+      font-size: 0.8rem !important;
+      line-height: 1.4 !important;
+    }
+
+    .hero-service-summary {
+      gap: 0.65rem;
+    }
+
+    .hero-service-summary a {
+      padding: 0.75rem;
+    }
+
+    .hero-service-summary strong {
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .hero-service-summary span {
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .service-orbit {
+      width: min(92vw, 320px);
+      height: min(92vw, 320px);
+      margin-inline: auto;
+    }
+
+    .service-orbit-link {
+      width: 116px;
+      min-height: 44px;
+    }
+
+    .service-orbit-link:nth-child(1) {
+      transform: translate(-50%, calc(-50% - 100px));
+    }
+
+    .service-orbit-link:nth-child(2) {
+      transform: translate(calc(-50% + 100px), -50%);
+    }
+
+    .service-orbit-link:nth-child(3) {
+      transform: translate(-50%, calc(-50% + 100px));
+    }
+
+    .service-orbit-link:nth-child(4) {
+      transform: translate(calc(-50% - 100px), -50%);
+    }
+
+    .service-orbit-label {
+      min-height: 44px;
+      padding: 0.35rem 0.5rem;
+      font-size: 0.72rem;
+      line-height: 1.2;
+    }
+
+    .service-orbit-center {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+
+    .service-orbit-center img {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .kpi-card {
+      padding: 0.85rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header > div:first-child > div.max-w-7xl {
+      height: 2.25rem !important;
+      padding-right: 0.75rem !important;
+      padding-left: 0.75rem !important;
+      font-size: 0.68rem;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:first-child {
+      gap: 0.35rem;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:first-child > div {
+      gap: 0.2rem;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:last-child {
+      gap: 0.4rem;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:last-child > div {
+      display: none;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:last-child a span:last-child {
+      display: none;
+    }
+
+    header > div:nth-child(2) {
+      padding-right: 0.75rem !important;
+      padding-left: 0.75rem !important;
+    }
+
+    header > div:nth-child(2) > div:first-child span:last-child {
+      font-size: 0.6rem;
+    }
+
+    main {
+      padding-top: 11.25rem !important;
+    }
+
+    .grid.grid-cols-2 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .project-slider {
+      max-width: 100%;
+    }
+
+    #contact-us .flex.items-center.justify-between > div {
+      flex: 1 1 12rem;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    #contact-us .flex.items-center.justify-between > a {
+      margin-left: auto;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      font-size: max(1rem, 1em);
+    }
+  }
+
+  main h1,
+  main h2,
+  main h3 {
+    letter-spacing: 0.01em !important;
+    word-spacing: 0.08em;
+    line-height: 1.2 !important;
+  }
+
+  main h1.hero-heading {
+    font-size: clamp(1.75rem, 3vw, 2.25rem) !important;
+    line-height: 1 !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  main h2[class*="headline"] {
+    font-size: clamp(1.5rem, 2.5vw, 1.875rem) !important;
+  }
+
+  main h3[class*="headline"] {
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem) !important;
+  }
+
+  #project-gallery.project-slider {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  #project-gallery-grid.project-slider-track {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    animation: none;
+  }
+
+  #project-gallery-grid .project-slide {
+    flex: initial;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(156, 39, 176, 0.22);
+    border-radius: 0.5rem;
+    background: #faf7fc;
+    box-shadow: 0 4px 14px rgba(40, 35, 29, 0.1);
+  }
+
+  #project-gallery-grid .project-slide img,
+  #project-gallery-grid .project-slide video {
+    object-fit: cover !important;
+  }
+
+  #home-project-carousel .project-slider-track {
+    animation-duration: var(--project-carousel-duration, 114s);
+  }
+
+  @media (max-width: 480px) {
+    #project-gallery-grid.project-slider-track {
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .hero-service-summary {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .main-navigation {
+      gap: 0.2rem;
+    }
+
+    .main-navigation > .nav-link,
+    .services-menu-toggle {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+
+  /* =====================================================================
+     COMPREHENSIVE RESPONSIVE DESIGN — ALL DEVICES
+     Breakpoints:
+       xs  : < 360px  (very small phones)
+       sm  : 360-479px
+       md  : 480-767px  (phones)
+       lg  : 768-1023px (tablets)
+       xl  : 1024-1279px
+       2xl : 1280px+  (desktop)
+  ===================================================================== */
+
+  /* --- Global base fixes --- */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent text overflow everywhere */
+  p, span, div, h1, h2, h3, h4, li {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* --- Table responsive wrapper --- */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  /* =====================================================================
+     LARGE DESKTOP (1280px+)
+  ===================================================================== */
+  @media (min-width: 1280px) {
+    .px-margin {
+      padding-right: 2rem !important;
+      padding-left: 2rem !important;
+    }
+  }
+
+  /* =====================================================================
+     TABLET LANDSCAPE + SMALL DESKTOP (1024px – 1279px)
+  ===================================================================== */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .px-margin {
+      padding-right: 1.5rem !important;
+      padding-left: 1.5rem !important;
+    }
+
+    .hero-heading {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem) !important;
+    }
+
+    .home-service-card img {
+      height: 11rem;
+    }
+  }
+
+  /* =====================================================================
+     TABLET PORTRAIT (768px – 1023px)
+  ===================================================================== */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Header top bar */
+    header > div:first-child > div.max-w-7xl {
+      padding-right: 1rem !important;
+      padding-left: 1rem !important;
+      font-size: 0.65rem;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:first-child {
+      gap: 0.5rem;
+    }
+
+    /* Hero section */
+    .hero-heading {
+      font-size: clamp(1.5rem, 3vw, 2rem) !important;
+    }
+
+    /* Service orbit on tablets */
+    .service-orbit {
+      width: min(100%, 280px);
+    }
+
+    /* Grid: 2 col on tablet for service cards */
+    #home-service-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    /* Project slide show 2 per view on tablet */
+    .project-slide {
+      flex: 0 0 calc(100cqi / 2);
+    }
+
+    /* Geotechnical matrix table */
+    table {
+      min-width: 520px;
+      font-size: 0.8rem;
+    }
+
+    /* Contact section - phone lines */
+    #contact-us .flex.items-center.justify-between > div {
+      flex: 1 1 8rem;
+      min-width: 0;
+    }
+
+    /* RFQ form */
+    #rfqForm .grid.grid-cols-1.md\\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Footer */
+    footer .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    /* Map height */
+    .w-full.h-80 {
+      height: 18rem;
+    }
+
+    /* Padding adjustments */
+    .px-margin {
+      padding-right: 1.25rem !important;
+      padding-left: 1.25rem !important;
+    }
+  }
+
+  /* =====================================================================
+     MOBILE LANDSCAPE + LARGE PHONES (640px – 767px)
+  ===================================================================== */
+  @media (min-width: 640px) and (max-width: 767px) {
+    /* Hero layout: single column */
+    .grid.grid-cols-1.lg\\:grid-cols-12 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .lg\\:col-span-7, .lg\\:col-span-5 {
+      grid-column: span 1 !important;
+    }
+
+    /* Hero image height reduce */
+    .relative.h-\\[380px\\] {
+      height: 240px !important;
+    }
+
+    .hero-heading {
+      font-size: clamp(1.4rem, 4vw, 1.8rem) !important;
+    }
+
+    /* Services: 2 col */
+    #home-service-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .home-service-card img {
+      height: 10rem;
+    }
+
+    /* Project slides: full width on small screens */
+    .project-slide {
+      flex: 0 0 100cqi;
+    }
+
+    /* Orbit */
+    .service-orbit {
+      width: min(100%, 260px);
+    }
+  }
+
+  /* =====================================================================
+     MOBILE (480px – 639px)
+  ===================================================================== */
+  @media (min-width: 480px) and (max-width: 639px) {
+    /* Top bar */
+    header > div:first-child > div.max-w-7xl {
+      height: auto !important;
+      min-height: 2.5rem;
+      flex-wrap: wrap;
+      padding: 0.4rem 0.75rem !important;
+      font-size: 0.63rem;
+      gap: 0.25rem;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:last-child > div {
+      display: none !important;
+    }
+
+    /* Hero heading */
+    .hero-heading {
+      font-size: clamp(1.3rem, 5vw, 1.7rem) !important;
+      line-height: 1.25 !important;
+    }
+
+    /* Hero image */
+    .relative.h-\\[380px\\] {
+      height: 220px !important;
+    }
+
+    /* Hero grid single col */
+    .grid.grid-cols-1.lg\\:grid-cols-12 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Trust container: stack */
+    .hero-trust-container {
+      flex-direction: column;
+    }
+
+    .hero-trust-container > div {
+      flex: 1 1 100% !important;
+    }
+
+    /* Service summary: 1 col */
+    .hero-service-summary {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Service cards: 1 col */
+    #home-service-list {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .home-service-card img {
+      height: 9rem;
+    }
+
+    /* Orbit */
+    .service-orbit {
+      width: min(100%, 240px);
+    }
+
+    /* Footer */
+    footer .grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* RFQ form button */
+    #rfqForm button[type="submit"] {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Info cards: 1 col on mobile */
+    .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-4 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Map height */
+    .w-full.h-80 {
+      height: 14rem;
+    }
+  }
+
+  /* =====================================================================
+     SMALL MOBILE (360px – 479px)
+  ===================================================================== */
+  @media (max-width: 479px) {
+    /* Global padding tighten */
+    .px-margin {
+      padding-right: 0.75rem !important;
+      padding-left: 0.75rem !important;
+    }
+
+    /* Top bar — collapse text, keep key info */
+    header > div:first-child > div.max-w-7xl {
+      height: auto !important;
+      min-height: 2.25rem;
+      flex-wrap: wrap;
+      padding: 0.35rem 0.75rem !important;
+      font-size: 0.6rem;
+      gap: 0.2rem 0.5rem;
+    }
+
+    /* Hide secondary items in top bar on very small screens */
+    header > div:first-child > div.max-w-7xl > div:last-child > div {
+      display: none !important;
+    }
+
+    header > div:first-child > div.max-w-7xl > div:last-child a span:last-child {
+      display: none !important;
+    }
+
+    /* Hero heading */
+    .hero-heading {
+      font-size: clamp(1.2rem, 6vw, 1.5rem) !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.015em !important;
+    }
+
+    /* Hero body text */
+    .font-body-lg.text-body-lg {
+      font-size: 0.9rem !important;
+      line-height: 1.55 !important;
+    }
+
+    /* Hero image box */
+    .relative.h-\\[380px\\] {
+      height: 200px !important;
+    }
+
+    /* Hero grid: single column */
+    .grid.grid-cols-1.lg\\:grid-cols-12 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* CTA buttons */
+    .flex.flex-wrap.items-center.gap-space-sm.pt-space-xs {
+      flex-direction: column;
+    }
+
+    .flex.flex-wrap.items-center.gap-space-sm.pt-space-xs > a {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Trust badges: stack vertically */
+    .hero-trust-container {
+      flex-direction: column;
+    }
+
+    .hero-trust-container > div {
+      flex: 1 1 100% !important;
+      min-width: 0;
+    }
+
+    /* Service summary: 1 col */
+    .hero-service-summary {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Section h2 sizes */
+    .font-headline-lg.text-headline-lg {
+      font-size: clamp(1.1rem, 5.5vw, 1.5rem) !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Section h3 */
+    .font-headline-md.text-headline-md,
+    .font-headline-sm.text-headline-sm {
+      font-size: clamp(0.95rem, 4.5vw, 1.1rem) !important;
+    }
+
+    /* Service cards: 1 col */
+    #home-service-list {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .home-service-card img {
+      height: 8.5rem;
+    }
+
+    /* Why choose us: 1 col */
+    .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-4 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Info cards 3-col → 1-col */
+    .grid.grid-cols-1.md\\:grid-cols-3 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Trust section 5-col → 1-col */
+    .grid.grid-cols-1.lg\\:grid-cols-5 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .lg\\:col-span-2,
+    .lg\\:col-span-3 {
+      grid-column: span 1 !important;
+    }
+
+    /* Trust inner 2-col → 1-col */
+    .grid.grid-cols-1.sm\\:grid-cols-2 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Piling section: 3-col → 1-col */
+    .grid.grid-cols-1.lg\\:grid-cols-3 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Building materials: 3-col → 1-col */
+    .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Machinery: 2-col → 1-col */
+    .grid.grid-cols-1.lg\\:grid-cols-2 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    /* Orbit: compact & readable on phone */
+    .service-orbit {
+      width: min(92vw, 300px);
+      height: min(92vw, 300px);
+      margin-inline: auto;
+    }
+
+    .service-orbit-center {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .service-orbit-center img {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    .service-orbit-link {
+      width: 108px !important;
+      min-height: 40px !important;
+    }
+
+    .service-orbit-link:nth-child(1) {
+      transform: translate(-50%, calc(-50% - 94px)) !important;
+    }
+
+    .service-orbit-link:nth-child(2) {
+      transform: translate(calc(-50% + 94px), -50%) !important;
+    }
+
+    .service-orbit-link:nth-child(3) {
+      transform: translate(-50%, calc(-50% + 94px)) !important;
+    }
+
+    .service-orbit-link:nth-child(4) {
+      transform: translate(calc(-50% - 94px), -50%) !important;
+    }
+
+    .service-orbit-label {
+      font-size: 0.68rem !important;
+      padding: 0.3rem 0.45rem !important;
+      min-height: 40px !important;
+    }
+
+    /* KPI cards: wider on mobile */
+    .kpi-card {
+      flex: 0 0 85vw !important;
+    }
+
+    /* Project slide: full width */
+    .project-slide {
+      flex: 0 0 100cqi !important;
+    }
+
+    /* RFQ section: 1-col */
+    .grid.grid-cols-1.lg\\:grid-cols-12 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .lg\\:col-span-5,
+    .lg\\:col-span-7 {
+      grid-column: span 1 !important;
+    }
+
+    /* RFQ form: 1-col */
+    #rfqForm .grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #rfqForm button[type="submit"] {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Contact: 12-col → 1-col */
+    .grid.grid-cols-1.lg\\:grid-cols-12 {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .lg\\:col-span-6 {
+      grid-column: span 1 !important;
+    }
+
+    /* Contact phone lines */
+    #contact-us .flex.items-center.justify-between {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    #contact-us .flex.items-center.justify-between > div {
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+
+    #contact-us .flex.items-center.justify-between > a {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* Map */
+    .w-full.h-80 {
+      height: 13rem;
+    }
+
+    /* Footer grid: 1-col */
+    footer .grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    footer .grid > div {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer .grid > div:last-child {
+      border-bottom: none;
+    }
+
+    /* Footer bottom strip */
+    footer .flex.flex-col.sm\\:flex-row {
+      flex-direction: column !important;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    footer .flex.items-center.gap-space-lg {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    /* FAQ adjustments */
+    .home-faq summary {
+      padding: 0.75rem;
+      font-size: 0.88rem;
+    }
+
+    .home-faq details p {
+      padding: 0 0.75rem 0.75rem;
+      font-size: 0.88rem;
+    }
+
+    /* Machinery breaker image heights */
+    .relative.h-60 {
+      height: 10rem !important;
+    }
+
+    /* Dispatch strip in hero */
+    .mt-space-sm.p-space-sm.bg-surface-container-lowest {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    /* Section header flex on mobile */
+    .flex.flex-col.md\\:flex-row.md\\:items-end.justify-between {
+      flex-direction: column !important;
+    }
+
+    .flex.flex-col.md\\:flex-row.md\\:items-end.justify-between > a {
+      align-self: flex-start;
+      margin-top: 0.25rem;
+    }
+
+    /* Input/select/textarea font size to prevent zoom on iOS */
+    input, select, textarea {
+      font-size: max(1rem, 16px) !important;
+    }
+
+    /* Spectrum gallery grid: 1-col */
+    #project-gallery-grid.project-slider-track {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+  }
+
+  /* =====================================================================
+     VERY SMALL PHONES (< 360px)
+  ===================================================================== */
+  @media (max-width: 359px) {
+    .px-margin {
+      padding-right: 0.5rem !important;
+      padding-left: 0.5rem !important;
+    }
+
+    .hero-heading {
+      font-size: 1.1rem !important;
+      line-height: 1.3 !important;
+    }
+
+    .service-orbit {
+      width: min(100%, 200px);
+    }
+
+    .service-orbit-link {
+      width: min(100px, 45vw) !important;
+    }
+
+    .kpi-card {
+      flex: 0 0 90vw !important;
+    }
+
+    /* Buttons: always full width */
+    a[href^="tel:"],
+    a[href*="wa.me"] {
+      width: 100% !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+  }
+
+  /* =====================================================================
+     TOUCH / HOVER INTERACTION IMPROVEMENTS
+  ===================================================================== */
+  @media (hover: none) {
+    .home-service-card:hover,
+    .home-info-card:hover,
+    .hero-service-summary a:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .main-navigation > .nav-link:hover,
+    .services-menu-toggle:hover {
+      background: none;
+      color: inherit;
+    }
+
+    /* Larger touch targets on mobile */
+    .main-navigation > .nav-link,
+    .services-menu-toggle {
+      min-height: 2.75rem !important;
+    }
+  }
+
+  /* =====================================================================
+     PRINT STYLES
+  ===================================================================== */
+  @media print {
+    header, footer { display: none !important; }
+    main { padding-top: 0 !important; }
+    .project-slider, .kpi-carousel, .service-orbit-section { display: none !important; }
+    section { page-break-inside: avoid; }
+    a[href^="tel:"], a[href*="wa.me"] { text-decoration: none; }
+    * { color: #000 !important; background: #fff !important; }
+  }
+</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="bg-primary-container text-on-primary-fixed border-b border-primary-container"><div class="max-w-7xl mx-auto px-margin h-10 flex items-center justify-between font-label-sm text-label-sm"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-surface-bright"><span class="material-symbols-outlined text-secondary-container text-[15px]">verified</span><span>GSTIN:</span><span class="font-label-md text-secondary-container">08AYJPS3327B1ZH</span></div><div class="hidden md:flex items-center gap-space-xs text-on-primary-container"><span class="material-symbols-outlined text-[15px]">location_on</span><span>Pratap Nagar, Sanganer, Jaipur (Raj.)</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs text-on-primary-container"><span class="material-symbols-outlined text-[15px]">engineering</span><span>Govt. Regd Civil &amp; Geotechnical</span></div><a class="flex items-center gap-space-xs font-label-md text-label-md text-secondary-container hover:text-surface-bright transition-colors" href="tel:+919314533005"><span class="material-symbols-outlined text-[15px]">phone_in_talk</span><span>HOTLINE: +91 9314533005</span></a></div></div></div><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="SK Associates logo" class="w-16 h-16 object-contain" src="./logo.png"/><div class="flex flex-col"><span class="font-headline-md text-headline-sm uppercase text-on-surface leading-tight tracking-tight">M/s S.K. ASSOCIATES</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Engineering, Heavy Piling &amp; Rig Machinery</span></div></div><nav class="hidden xl:flex items-center gap-space-md font-label-md text-label-md uppercase tracking-wider" data-active-classes="text-on-surface font-headline-sm nav-link active pb-1"><a aria-current="page" class="nav-link active transition-colors text-on-surface font-headline-sm pb-1" data-path="home" href="#">Home</a><a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors" data-path="pile-foundations" href="#">Pile Foundations</a><a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors" data-path="building-materials" href="#">Building Materials</a><a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors" data-path="machinery-rental" href="#">Machinery Rental</a><a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors" data-path="water-harvesting-and-borewells" href="#">Water Harvesting &amp; Borewells</a><a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-and-fleet" href="#">About &amp; Fleet</a><a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><a class="top-action-pill relative px-space-sm py-space-xs bg-primary-container text-on-primary hover:bg-on-background font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-colors" href="#services">Services</a><a class="top-action-pill relative px-space-sm py-space-xs bg-surface-container text-on-surface hover:bg-surface-variant font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-colors" href="#our-work">Our Work</a><a class="top-action-pill relative px-space-sm py-space-xs bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-colors" href="#contact-us">Contact Us</a></div><div class="flex items-center gap-space-sm"></div></div></header><main class="w-full pt-[7.5rem] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- ==================== TOP HERO & OPERATIONAL DASHBOARD ==================== -->
+<section class="relative w-full bg-surface-container-low overflow-hidden" id="home">
+<!-- Geometric structural grid overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(#131b2e_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-margin py-space-xl relative z-10">
+<!-- High-visibility compliance & standard badges -->
+<div class="hero-trust-container">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-primary-container text-on-primary-fixed font-label-sm text-label-sm uppercase rounded-DEFAULT shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary-container">shield_with_heart</span>
+<span>Govt. Regd Contractor</span>
+<span class="text-outline-variant">•</span>
+<span class="font-mono text-secondary-container">GSTIN: 08AYJPS3327B1ZH</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-highest text-on-surface font-label-sm text-label-sm uppercase rounded-DEFAULT shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+<span>IS:2911 Piling Standard Compliant</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase rounded-DEFAULT shadow-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Immediate Mobilization: Jaipur &amp; Rajasthan Zones</span>
+</div>
+</div>
+<!-- Hero Main 2-Column Desktop Grid -->
+<div class="grid grid-cols-1 gap-space-xl items-center">
+<!-- Left: Heavy Engineering Statement & Action Hub -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span>What We Do • Jaipur &amp; Rajasthan</span>
+</div>
+<h1 class="hero-heading font-headline-lg text-headline-lg lg:text-[44px] lg:leading-[52px] text-on-surface uppercase font-bold tracking-tight leading-[1.08]">
+            Pile Foundations, Building Materials &amp; Machinery Rental in <span class="text-secondary">Jaipur</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed text-[15px] md:text-[16px]">
+            We build deep pile foundations, supply construction materials, rent heavy machinery, and provide borewell and rainwater-recharge services.
+          </p>
+
+<!-- Desktop CTAs -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<a class="px-space-lg py-space-sm bg-primary-container hover:bg-on-background text-on-primary font-headline-sm text-title-md uppercase tracking-wider rounded-DEFAULT shadow-md flex items-center gap-space-xs transition-all" href="tel:+919314533005">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Call Now</span>
+</a>
+<a class="px-space-lg py-space-sm bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-headline-sm text-title-md uppercase tracking-wider rounded-DEFAULT shadow-md flex items-center gap-space-xs transition-all" href="https://wa.me/919314533005?text=Hello%20SK%20Associates,%20I%20need%20a%20service%20quotation." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+<!-- Micro Dispatch Status Strip -->
+<div class="mt-space-sm p-space-sm bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span>Dumper Batches: Continuous 24/7 Supply</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">explore</span>
+<span>Field Rig Base: Pratap Nagar, Sanganer</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>NABL Lab Test Compliant</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust KPI Counter Ribbon (Horizontal Industrial Bento) -->
+<div class="kpi-carousel" aria-label="Company experience and service highlights">
+<div class="kpi-carousel-track">
+<div class="kpi-card-group">
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Experience</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">history</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold">20+ Years</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Geotechnical experience across Rajasthan</div>
+</div>
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Executed Piles</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">foundation</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Bored Cast-in-Situ &amp; DMC Tested Foundations</div>
+</div>
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Quality Verification</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Ultrasonic Cross-Hole Sonic &amp; Load Test Assurance</div>
+</div>
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Fleet Strength</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">fire_hydrant</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Rotary Rigs, Breakers, Dumpers &amp; Earthmovers</div>
+</div>
+</div>
+<div class="kpi-card-group" aria-hidden="true">
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Experience</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">history</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold">20+ Years</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Geotechnical experience across Rajasthan</div>
+</div>
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Executed Piles</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">foundation</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Bored Cast-in-Situ &amp; DMC Tested Foundations</div>
+</div>
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Quality Verification</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Ultrasonic Cross-Hole Sonic &amp; Load Test Assurance</div>
+</div>
+<div class="kpi-card p-space-md bg-surface-container-lowest rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Fleet Strength</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">fire_hydrant</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Rotary Rigs, Breakers, Dumpers &amp; Earthmovers</div>
+</div>
+</div>
+</div>
+</div>
+<div class="service-orbit-section" aria-label="All services">
+<div class="service-orbit">
+<div class="service-orbit-center">
+<img alt="" src="./logo.png"/>
+<span class="font-label-sm text-label-sm uppercase">Our Services</span>
+</div>
+<div class="service-orbit-track">
+<a class="service-orbit-link" href="#services"><span class="service-orbit-label"><span class="material-symbols-outlined">foundation</span><span>Pile Foundations</span></span></a>
+<a class="service-orbit-link" href="#building-materials"><span class="service-orbit-label"><span class="material-symbols-outlined">inventory_2</span><span>Building Materials</span></span></a>
+<a class="service-orbit-link" href="#machinery-rental"><span class="service-orbit-label"><span class="material-symbols-outlined">front_loader</span><span>Machinery Rental</span></span></a>
+<a class="service-orbit-link" href="#water-harvesting"><span class="service-orbit-label"><span class="material-symbols-outlined">water_drop</span><span>Water Harvesting &amp; Borewells</span></span></a>
+</div>
+</div>
+</div>
+<div class="mt-space-xl space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">photo_library</span>
+<span>Our Work</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">Project Photo &amp; Video Gallery</h2>
+</div>
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary-container" href="?page=work#our-work">View all photos &amp; videos</a>
+</div>
+<div class="project-slider" id="home-project-carousel" aria-label="Featured project photos and videos">
+<div class="project-slider-track" id="home-project-carousel-track"></div>
+<div class="project-slider-controls">
+<button class="project-slider-button" id="home-project-carousel-previous" type="button" aria-label="Previous project media">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="project-slider-button" id="home-project-carousel-next" type="button" aria-label="Next project media">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="project-slider-footer">
+<span class="font-label-sm text-label-sm uppercase">Project Photos &amp; Videos</span>
+<span class="font-label-sm text-label-sm">View all from Our Work</span>
+</div>
+</div>
+</div>
+<!-- Service Summary Cards — moved below gallery -->
+<div class="hero-service-summary mt-space-md" aria-label="Our services">
+<a href="?service=pile-foundations#services"><strong>Pile Foundations</strong><span>Deep foundation work for buildings and infrastructure</span></a>
+<a href="?service=building-materials#building-materials"><strong>Building Materials</strong><span>Construction materials delivered to your site</span></a>
+<a href="?service=machinery-rental#machinery-rental"><strong>Machinery Rental</strong><span>Rigs, excavators, JCBs and breakers</span></a>
+<a href="?service=water-harvesting#water-harvesting"><strong>Borewells &amp; Water Recharge</strong><span>Deep borewells and rainwater-harvesting systems</span></a>
+</div>
+<div class="mt-space-xl space-y-space-md" aria-label="Services, trust information, and frequently asked questions">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">Our Services</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">Support for your project, in one place</h2>
+</div>
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary-container" href="?service=pile-foundations#services">Explore all services</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md" id="home-service-list">
+<a class="home-service-card" href="?service=pile-foundations#services">
+<img src="./image copy 14.png" alt="Piling rig operating at a construction site" loading="lazy"/>
+<div class="p-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Pile Foundations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep rotary boring and bored cast-in-situ pile foundation services for building and infrastructure projects. The team can discuss site conditions, pile dimensions, and the suitable work scope with you.</p>
+<ul>
+<li>Rotary bored piles in 300–1200 mm diameters</li>
+<li>Cast-in-situ and under-reamed pile options</li>
+<li>DMC piling and pile-cage reinforcement work</li>
+<li>NDT, sonic integrity, and pile-load testing options</li>
+</ul>
+<span class="mt-space-md inline-flex items-center gap-space-xs font-label-md text-label-md uppercase text-secondary">View piling details <span aria-hidden="true">→</span></span>
+</div>
+</a>
+<a class="home-service-card" href="?service=building-materials#building-materials">
+<img src="./image copy 5.png" alt="Reinforcement steel cage prepared for construction work" loading="lazy"/>
+<div class="p-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Building Materials</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Construction material supply with dumper and truck dispatch options. Share your location, material, quantity, and schedule so the team can discuss availability and a project-specific quotation.</p>
+<ul>
+<li>Cement, including OPC and PPC grades</li>
+<li>Bajri, river sand, rodi, and blue-granite grit</li>
+<li>Bricks and building blocks</li>
+<li>Iron and TMT sariya, plus damar, asphalt, and RCC pipes</li>
+</ul>
+<span class="mt-space-md inline-flex items-center gap-space-xs font-label-md text-label-md uppercase text-secondary">View material details <span aria-hidden="true">→</span></span>
+</div>
+</a>
+<a class="home-service-card" href="?service=machinery-rental#machinery-rental">
+<img src="./image copy 19.png" alt="Construction equipment mobilized to a project site" loading="lazy"/>
+<div class="p-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Machinery Rental</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Heavy plant and equipment for construction, excavation, and hard-rock work. Ask the team about equipment fit, operator and transport requirements, and current availability for your site.</p>
+<ul>
+<li>Hydraulic piling rigs and rotary boring equipment</li>
+<li>Excavators with hydraulic rock breakers</li>
+<li>JCB 3DX and earthmoving equipment</li>
+<li>Hourly, shift-based, and longer project hire enquiries</li>
+</ul>
+<span class="mt-space-md inline-flex items-center gap-space-xs font-label-md text-label-md uppercase text-secondary">View machinery details <span aria-hidden="true">→</span></span>
+</div>
+</a>
+<a class="home-service-card" href="?service=water-harvesting#water-harvesting">
+<img src="./image copy 7.png" alt="Water flowing from a borewell during a site test" loading="lazy"/>
+<div class="p-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Borewells &amp; Rainwater Recharge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Groundwater and rainwater-recharge work for residential, commercial, and industrial sites. Discuss your water requirement, site conditions, and applicable permissions with the team before planning the work.</p>
+<ul>
+<li>Deep tube wells and industrial borewells</li>
+<li>Rainwater-harvesting and groundwater-recharge shafts</li>
+<li>Recharge structures and desilting chambers</li>
+<li>Site-specific assessment and service availability discussion</li>
+</ul>
+<span class="mt-space-md inline-flex items-center gap-space-xs font-label-md text-label-md uppercase text-secondary">View water-service details <span aria-hidden="true">→</span></span>
+</div>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<div class="home-info-card p-space-md">
+<div class="home-info-icon mb-space-sm"><span class="material-symbols-outlined">location_on</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Jaipur-based team</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Based in Pratap Nagar, Sanganer, and coordinating projects across Jaipur and Rajasthan.</p>
+</div>
+<div class="home-info-card p-space-md">
+<div class="home-info-icon mb-space-sm"><span class="material-symbols-outlined">badge</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Business details available</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">GSTIN: 08AYJPS3327B1ZH. Contact the team to discuss the work and requirements.</p>
+</div>
+<div class="home-info-card p-space-md">
+<div class="home-info-icon mb-space-sm"><span class="material-symbols-outlined">support_agent</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Ask before you decide</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Confirm service availability and request a quotation based on your site needs.</p>
+</div>
+</div>
+<div class="home-faq max-w-4xl mx-auto space-y-space-sm" id="home-faqs">
+<div class="text-center mb-space-md">
+<div class="font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">Frequently Asked Questions</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">A few helpful answers</h2>
+</div>
+<div class="space-y-space-xs">
+<details>
+<summary>What services does M/s S.K. Associates provide?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">Pile foundations, construction material supply, heavy machinery rental, deep borewells, and rainwater-harvesting/recharge services.</p>
+</details>
+<details>
+<summary>Where do you provide services?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">The team is based in Pratap Nagar, Sanganer, Jaipur. Share your site location to confirm availability.</p>
+</details>
+<details>
+<summary>How can I ask about a quotation?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">Call or WhatsApp with your service needs, site location, approximate quantity or dimensions, and preferred schedule.</p>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-surface-container-low py-space-xl" id="our-work" hidden>
+<div class="max-w-7xl mx-auto px-margin space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">photo_library</span>
+<span>Our Work</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">Project Photo &amp; Video Gallery</h2>
+</div>
+<div class="font-label-sm text-label-sm uppercase text-on-surface-variant">All local project assets</div>
+</div>
+<div class="project-slider" id="project-gallery">
+<div class="project-slider-track" id="project-gallery-grid"></div>
+<div class="project-slider-footer">
+<span class="font-label-sm text-label-sm uppercase">Project Photos &amp; Videos</span>
+<span class="font-label-sm text-label-sm" id="project-gallery-counter" aria-live="polite">Loading project media…</span>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-surface-container-low py-space-xl" id="about-us">
+<div class="max-w-7xl mx-auto px-margin space-y-space-xl">
+<div class="max-w-3xl">
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">apartment</span>
+<span>About M/s S.K. Associates</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">Your Jaipur partner for dependable construction-site support</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+Choosing a construction partner takes trust. M/s S.K. Associates is a Jaipur-based team offering pile foundations, building materials, heavy machinery rental, deep borewells, and rainwater-recharge services for projects across Jaipur and Rajasthan. Talk directly with our team about your site, understand service availability, and request a quotation based on your requirements—so you can make an informed decision before work begins.
+</p>
+</div>
+
+<div id="why-choose-us">
+<div class="mb-space-md">
+<div class="font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">Why Choose S.K. Associates</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">Clear communication. Local coordination. Practical support.</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<article class="home-info-card p-space-md">
+<div class="home-info-icon mb-space-sm"><span class="material-symbols-outlined">history</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Experience you can discuss</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">More than 20 years of geotechnical and construction-site experience across Rajasthan.</p>
+</article>
+<article class="home-info-card p-space-md">
+<div class="home-info-icon mb-space-sm"><span class="material-symbols-outlined">construction</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Several services, one team</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Discuss piling, materials, machinery, borewells, and rainwater recharge with one Jaipur-based team.</p>
+</article>
+<article class="home-info-card p-space-md">
+<div class="home-info-icon mb-space-sm"><span class="material-symbols-outlined">verified</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Clear, project-specific guidance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Discuss piling requirements, IS:2911 standards, and site conditions relevant to your project.</p>
+</article>
+<article class="home-info-card p-space-md">
+<div class="home-info-icon mb-space-sm"><span class="material-symbols-outlined">location_on</span></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Local Jaipur coordination</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Based in Pratap Nagar, Sanganer, and coordinating services across Jaipur and Rajasthan.</p>
+</article>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-space-md items-stretch" id="trust">
+<div class="lg:col-span-2 rounded-DEFAULT p-space-lg text-on-primary-fixed" style="background:#7b1fa2">
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider mb-space-sm">
+<span class="material-symbols-outlined">verified_user</span><span>Make an informed choice</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-white font-bold mb-space-sm">Know what to expect before work begins</h2>
+<p class="font-body-md text-body-md text-white leading-relaxed">
+Tell us about your site and requirements. Our team can discuss the relevant services, availability, and quotation with you directly, so you can ask questions and understand the next steps before deciding.
+</p>
+<a class="inline-flex items-center gap-space-xs mt-space-md px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md font-bold" style="background:#f28c00;color:#34230e" href="tel:+919314533005">
+<span class="material-symbols-outlined">call</span><span>Discuss Your Project</span>
+</a>
+</div>
+<div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="home-info-card p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary">badge</span>
+<div><h3 class="font-headline-sm text-headline-sm text-on-surface">Business details you can check</h3><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">GSTIN: 08AYJPS3327B1ZH</p></div>
+</div>
+<div class="home-info-card p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary">rule</span>
+<div><h3 class="font-headline-sm text-headline-sm text-on-surface">Piling requirements explained</h3><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Discuss IS:2911 piling standards and the conditions at your project site.</p></div>
+</div>
+<div class="home-info-card p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary">science</span>
+<div><h3 class="font-headline-sm text-headline-sm text-on-surface">Testing options discussed upfront</h3><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Ask about pile load and sonic testing options for projects where they apply.</p></div>
+</div>
+<div class="home-info-card p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary">support_agent</span>
+<div><h3 class="font-headline-sm text-headline-sm text-on-surface">Speak with the team directly</h3><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Call or WhatsApp to discuss your site, service needs, and next steps.</p></div>
+</div>
+</div>
+</div>
+
+<div class="home-faq max-w-4xl mx-auto" id="faqs">
+<div class="text-center mb-space-md">
+<div class="font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">Frequently Asked Questions</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">Before you get started</h2>
+</div>
+<div class="space-y-space-xs">
+<details>
+<summary>What services does M/s S.K. Associates provide?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">We provide pile foundation and piling work, construction material supply, heavy machinery rental, deep borewells, and rainwater-harvesting/recharge services.</p>
+</details>
+<details>
+<summary>Where do you provide services?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">Our base is in Pratap Nagar, Sanganer, Jaipur. Contact us with your site location so we can confirm service availability for your project.</p>
+</details>
+<details>
+<summary>How can I get a price or quotation?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">Call or WhatsApp us with the service you need, site location, approximate quantity or dimensions, and preferred schedule. Pricing depends on the project scope and site requirements.</p>
+</details>
+<details>
+<summary>Can I hire machinery for a specific shift or project?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">Machinery rental options include shift-based and longer-term arrangements. Contact the team to check equipment availability, operator requirements, and transport for your site.</p>
+</details>
+<details>
+<summary>What information should I share for a piling or borewell enquiry?</summary>
+<p class="font-body-md text-body-md text-on-surface-variant">Share the site location, project type, required depth or diameter if known, soil/site information, and your expected timeline. The team can then discuss the suitable next step.</p>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== HEAVY FOUNDATION & ROTARY BORING WING ==================== -->
+<section class="w-full bg-surface py-space-xl" id="services">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header with Industrial Tag -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg">
+<div class="max-w-2xl">
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">architecture</span>
+<span>Division 01: Geotechnical Foundation Engineering</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">
+            Heavy Piling &amp; Deep Rotary Boring Wing
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+            Engineered foundation solutions strictly compliant with Bureau of Indian Standards IS:2911 (Part 1/Sec 2). Owned hydraulic rigs tailored for high-rise commercial basements, bridge piers, solar farms, and institutional structures.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-space-xs bg-primary-container text-on-primary-fixed rounded-DEFAULT self-start md:self-auto shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-container"></div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Rotary Rigs Active &amp; Available for Dispatch</span>
+</div>
+</div>
+<!-- Technical Capabilities 3-Column Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md mb-space-lg">
+<!-- Card 1: Bore Diameters & Depths -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Spec Metric 01</span>
+<span class="material-symbols-outlined text-on-surface-variant">straighten</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">300mm – 1200mm Diameter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Hydraulic rotary boring rigs capable of penetrating hard metamorphic strata, consolidated basalt, gravelly beds, and dense clay pockets.
+            </p>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Max Bore Depth:</span>
+<span class="font-label-md text-label-md text-on-surface">Up to 45+ Meters</span>
+</div>
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Casing Protection:</span>
+<span class="font-label-md text-label-md text-on-surface">Temporary / Permanent MS Sleeves</span>
+</div>
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Stabilizing Agent:</span>
+<span class="font-label-md text-label-md text-on-surface">Controlled Bentonite Slurry Flush</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md">
+<a class="w-full py-space-xs bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT text-center block transition-colors" href="tel:+919314533005">
+              Inquire Piling Rig Availability
+            </a>
+</div>
+</div>
+<!-- Card 2: Cast-in-Situ & Under-Reamed -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Spec Metric 02</span>
+<span class="material-symbols-outlined text-on-surface-variant">layers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Cast-in-Situ &amp; Under-Reamed</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Specialized single and multi-bulb under-reamed bored compaction piles engineered for expansive black cotton soil and heavy structural column pads.
+            </p>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Reinforcement:</span>
+<span class="font-label-md text-label-md text-on-surface">Prefabricated Fe-550D Cages</span>
+</div>
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Concrete Placement:</span>
+<span class="font-label-md text-label-md text-on-surface">Tremie Pipe Submerged Pouring</span>
+</div>
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Design Compaction:</span>
+<span class="font-label-md text-label-md text-on-surface">Zero Slump Segregation Guarantee</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md">
+<a class="w-full py-space-xs bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT text-center block transition-colors" href="#quotation-calculator">
+              Get Under-Reamed Estimate
+            </a>
+</div>
+</div>
+<!-- Card 3: Quality Testing & Sonic Integrity -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Spec Metric 03</span>
+<span class="material-symbols-outlined text-on-surface-variant">troubleshoot</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">NDT &amp; Pile Load Testing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Comprehensive non-destructive testing, sonic integrity logging, and vertical static kentledge load tests verifying pile carrying capacities on-site.
+            </p>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Test Methodology:</span>
+<span class="font-label-md text-label-md text-on-surface">IS:2911 (Part 4) Verified</span>
+</div>
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Load Capacity Test:</span>
+<span class="font-label-md text-label-md text-on-surface">Up to 800 Metric Ton Kentledge</span>
+</div>
+<div class="flex justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant">Documentation:</span>
+<span class="font-label-md text-label-md text-on-surface">Govt Submittable Log Sheets</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md">
+<a class="w-full py-space-xs bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT text-center block transition-colors" href="tel:+917357185811">
+              Consult Structural Engineer
+            </a>
+</div>
+</div>
+</div>
+<!-- Soil Strata Capability Comparison Matrix -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm overflow-x-auto">
+<div class="flex items-center justify-between mb-space-md">
+<div class="font-headline-sm text-headline-sm uppercase text-on-surface">Rajasthan Geotechnical Strata Capability Matrix</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Updated Field Logs: Jaipur • Sanganer • Sitapura • Bhiwadi</div>
+</div>
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low font-label-md text-label-md text-on-surface uppercase">
+<th class="p-space-sm">Strata Profile</th>
+<th class="p-space-sm">Typical Region</th>
+<th class="p-space-sm">Methodology Applied</th>
+<th class="p-space-sm">Rig Tooling</th>
+<th class="p-space-sm">Typical Rate Band</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-sm font-headline-sm text-title-md text-on-surface">Quartzite / Hard Bedrock</td>
+<td class="p-space-sm text-on-surface-variant">Amber Hills, Jhalana, Ajmer Bypass</td>
+<td class="p-space-sm font-label-sm text-label-sm uppercase text-secondary font-bold">Chisel &amp; Core Barrel DMC Piling</td>
+<td class="p-space-sm text-on-surface-variant">Tungsten Carbide Roller Cone Bits</td>
+<td class="p-space-sm font-mono text-on-surface">RFQ on Strata Core Log</td>
+</tr>
+<tr class="bg-surface-container/30 hover:bg-surface-container-low transition-colors">
+<td class="p-space-sm font-headline-sm text-title-md text-on-surface">Dense Sandy Alluvial</td>
+<td class="p-space-sm text-on-surface-variant">Pratap Nagar, Mansarovar, Dravyavati basin</td>
+<td class="p-space-sm font-label-sm text-label-sm uppercase text-secondary font-bold">Hydraulic Continuous Flight Auger / Mud Flush</td>
+<td class="p-space-sm text-on-surface-variant">Soil Auger &amp; Cleaning Bucket</td>
+<td class="p-space-sm font-mono text-on-surface">Per Rmt Standard Rate</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-sm font-headline-sm text-title-md text-on-surface">Silty Clay &amp; Expansive Soil</td>
+<td class="p-space-sm text-on-surface-variant">Sitapura Phase IV, Sanganer Industrial, Bassi</td>
+<td class="p-space-sm font-label-sm text-label-sm uppercase text-secondary font-bold">Under-Reamed Bored Compaction Piling</td>
+<td class="p-space-sm text-on-surface-variant">Expanding Bulb Reamer Head</td>
+<td class="p-space-sm font-mono text-on-surface">Bulb + Stem Composite</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ==================== BULK BUILDING MATERIAL SUPPLY DIVISION ==================== -->
+<section class="w-full bg-surface-container-low py-space-xl" id="building-materials">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span>Division 02: Bulk Construction Logistics</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">
+            Bulk Building Material Supply Division
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs max-w-2xl">
+            Direct quarry and plant tie-ups supplying premium civil commodities with electronic weighbridge slips, test certificates, and immediate dumper logistics across Rajasthan.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<a class="px-space-md py-space-xs bg-primary-container text-on-primary-fixed hover:bg-on-background font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT shadow-sm flex items-center gap-space-xs transition-colors" href="tel:+919314533005">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">call</span>
+<span>Daily Mandi Rates Desk</span>
+</a>
+</div>
+</div>
+<!-- 6-Card High-Density Supply Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Item 1: Cement -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Bulk Bags &amp; Bulkers</span>
+<span class="material-symbols-outlined text-on-surface-variant">domain</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Certified Cement</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              UltraTech, JK Lakshmi, ACC, Shree Cement, Bangur. Grade 43, 53 OPC &amp; Portland Pozzolana Cement (PPC).
+            </p>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT space-y-1 mb-space-md text-body-sm">
+<div class="flex justify-between"><span class="text-on-surface-variant">Batch Size:</span><span class="font-label-md text-label-md text-on-surface">Min. 50 Bags / Direct Trailer</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Certification:</span><span class="font-label-md text-label-md text-on-surface">BIS Conforming Test Certificate</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Dispatch:</span><span class="font-label-md text-label-md text-secondary font-bold">Same Day Unloading</span></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+919314533005">
+              Book Cement Lot
+            </a>
+<a class="p-space-xs bg-surface-container text-on-surface hover:bg-surface-variant rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=Cement%20Rate%20Inquiry">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Item 2: Bajri & River Sand -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Govt. Royalty Slips</span>
+<span class="material-symbols-outlined text-on-surface-variant">grain</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Bajri &amp; River Sand</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              Authentic approved Banas River Sand and high-fineness washed M-Sand free from silt and organic impurities.
+            </p>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT space-y-1 mb-space-md text-body-sm">
+<div class="flex justify-between"><span class="text-on-surface-variant">Supply Unit:</span><span class="font-label-md text-label-md text-on-surface">Dumper (500-700 cft) / Dala</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Fineness Modulus:</span><span class="font-label-md text-label-md text-on-surface">Zone II &amp; Zone III Grading</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Weighment:</span><span class="font-label-md text-label-md text-secondary font-bold">Computerized Kanta Parchi</span></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+919314533005">
+              Order Dumper
+            </a>
+<a class="p-space-xs bg-surface-container text-on-surface hover:bg-surface-variant rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=Bajri%20Sand%20Inquiry">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Item 3: Bricks / Eent -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Kiln Fired &amp; Fly Ash</span>
+<span class="material-symbols-outlined text-on-surface-variant">view_stream</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Bricks / Eent Supply</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              Class-1 Red Kiln clay bricks (No. 1 Pukka Eent) and high-compressive load autoclaved fly ash blocks.
+            </p>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT space-y-1 mb-space-md text-body-sm">
+<div class="flex justify-between"><span class="text-on-surface-variant">Load Size:</span><span class="font-label-md text-label-md text-on-surface">Trolley (2500-3000) / Truck (5000+)</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Compressive:</span><span class="font-label-md text-label-md text-on-surface">&gt; 10.5 N/mm² High Strength</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Breakage:</span><span class="font-label-md text-label-md text-secondary font-bold">Minimal Transit Loss Guarantee</span></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+919314533005">
+              Dispatch Truck Load
+            </a>
+<a class="p-space-xs bg-surface-container text-on-surface hover:bg-surface-variant rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=Bricks%20Supply%20Inquiry">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Item 4: Rodi & Granite Grit -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Blue Metal Aggregate</span>
+<span class="material-symbols-outlined text-on-surface-variant">terrain</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Rodi &amp; Blue Granite Grit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              Machine-crushed washed blue granite aggregate in 10mm, 20mm, and 40mm sizes tailored for RCC slabs and highways.
+            </p>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT space-y-1 mb-space-md text-body-sm">
+<div class="flex justify-between"><span class="text-on-surface-variant">Flakiness Index:</span><span class="font-label-md text-label-md text-on-surface">&lt; 15% Tested (Cubical shape)</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Applications:</span><span class="font-label-md text-label-md text-on-surface">RCC Slabs, Columns &amp; Pavements</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Supply Speed:</span><span class="font-label-md text-label-md text-secondary font-bold">Continuous Crusher Feed</span></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+919314533005">
+              Order Aggregate Dumper
+            </a>
+<a class="p-space-xs bg-surface-container text-on-surface hover:bg-surface-variant rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=Rodi%20Grit%20Inquiry">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Item 5: TMT Sariya & Structural Iron -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Fe 550D High Ductile</span>
+<span class="material-symbols-outlined text-on-surface-variant">dehaze</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Iron &amp; TMT Sariya</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              Primary &amp; secondary mill TMT bars: Tata Tiscon, Jindal Panther, Kamdhenu, Rathi. Sizes 8mm through 32mm.
+            </p>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT space-y-1 mb-space-md text-body-sm">
+<div class="flex justify-between"><span class="text-on-surface-variant">Gauge Range:</span><span class="font-label-md text-label-md text-on-surface">8mm, 10mm, 12mm, 16mm, 20mm, 25mm</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Tolerance:</span><span class="font-label-md text-label-md text-on-surface">Standard Weight as per IS:1786</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Packaging:</span><span class="font-label-md text-label-md text-secondary font-bold">Straight &amp; Folded Bundles</span></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+919314533005">
+              Check Mandi Sariya Rate
+            </a>
+<a class="p-space-xs bg-surface-container text-on-surface hover:bg-surface-variant rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=TMT%20Sariya%20Rate%20Inquiry">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Item 6: Bitumen Damar & Hume Pipes -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Highway Infrastructure</span>
+<span class="material-symbols-outlined text-on-surface-variant">traffic</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Damar, Asphalt &amp; RCC Pipes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              VG-30, VG-40 refinery bitumen drums, cold asphalt patch, and reinforced Hume NP2/NP3 concrete storm drainage pipes.
+            </p>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT space-y-1 mb-space-md text-body-sm">
+<div class="flex justify-between"><span class="text-on-surface-variant">Bitumen Grades:</span><span class="font-label-md text-label-md text-on-surface">VG-30, VG-40 Sealed Barrels</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Hume Pipe Dia:</span><span class="font-label-md text-label-md text-on-surface">300mm to 1200mm Spigot/Socket</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Quality standard:</span><span class="font-label-md text-label-md text-secondary font-bold">PWD &amp; NHAI Approved Supply</span></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+919314533005">
+              Inquire Bitumen / Hume Pipes
+            </a>
+<a class="p-space-xs bg-surface-container text-on-surface hover:bg-surface-variant rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=Bitumen%20Hume%20Pipe%20Inquiry">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== HEAVY MACHINERY & BREAKER FLEET RENTAL ==================== -->
+<section class="w-full bg-surface py-space-xl" id="machinery-rental">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">front_loader</span>
+<span>Division 03: Heavy Plant &amp; Equipment Rental</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">
+            Heavy Machinery &amp; Hydraulic Breakers Fleet
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs max-w-2xl">
+            Trained operators, insured heavy plant, and dedicated low-bed transport trailers ready for instant shift-based or monthly contracts across commercial, residential, and mining jobsites.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="px-space-md py-space-xs bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT shadow-sm flex items-center gap-space-xs transition-colors" href="tel:+917611941567">
+<span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
+<span>Fleet Manager: +91 7611941567</span>
+</a>
+</div>
+</div>
+<!-- Fleet Grid (2 Wide Visual Feature Panels) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Fleet Item 1: Rock Breakers -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="relative h-60 w-full rounded-DEFAULT overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Heavy tracked 20-ton excavator fitted with a massive hydraulic rock breaker chisel pulverizing hard granite rock formation during basement excavation in Jaipur. High-power impact shockwaves, crushed stone debris, sharp industrial clarity, outdoor harsh lighting, detailed mechanical hydraulics." src="./image copy 26.png"/>
+<div class="absolute top-space-xs right-space-xs bg-primary-container text-secondary-container px-space-xs py-0.5 rounded-DEFAULT font-label-sm text-label-sm uppercase">
+                Hourly / Shift Contracts
+              </div>
+</div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Excavator Hydraulic Rock Breakers</h3>
+<span class="material-symbols-outlined text-secondary">hardware</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              High-impact chisel breakers mounted on 20-Ton excavators (Tata Hitachi EX200 / Komatsu PC210). Engineered for rapid hard rock trenching, basement RCC rock carving, and industrial foundation demolition.
+            </p>
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm mb-space-md">
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant block text-label-sm">Tool Impact Energy:</span>
+<span class="font-headline-sm text-title-md text-on-surface">4,500 - 6,500 Joules</span>
+</div>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant block text-label-sm">Mobilization Base:</span>
+<span class="font-headline-sm text-title-md text-on-surface">Jaipur Ring Road Depot</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<a class="flex-1 py-space-sm bg-primary-container hover:bg-on-background text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+917611941567">
+              Book Breaker Shift
+            </a>
+<a class="px-space-md py-space-sm bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=Rock%20Breaker%20Rental%20Quote">
+              Get Rate Sheet
+            </a>
+</div>
+</div>
+<!-- Fleet Item 2: JCB & Excavator Fleet -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="relative h-60 w-full rounded-DEFAULT overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern yellow JCB 3DX backhoe loader and heavy Komatsu tracked excavators lined up on a broad construction logistics yard in Jaipur, Rajasthan. Freshly maintained bucket teeth, hydraulic rams gleaming under direct sun, clear blue sky, professional engineering plant atmosphere." src="./image copy 3.png"/>
+<div class="absolute top-space-xs right-space-xs bg-secondary-container text-on-secondary-container px-space-xs py-0.5 rounded-DEFAULT font-label-sm text-label-sm uppercase font-bold">
+                Ready for Dispatch
+              </div>
+</div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Excavators, JCB 3DX &amp; Earthmovers</h3>
+<span class="material-symbols-outlined text-secondary">agriculture</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Full excavation fleet ready for mass site leveling, basement deep digs, highway embankment cutting, and round-the-clock soil/malba loading into heavy multi-axle dumpers.
+            </p>
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm mb-space-md">
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant block text-label-sm">Bucket Capacity:</span>
+<span class="font-headline-sm text-title-md text-on-surface">0.9 cbm to 1.2 cbm</span>
+</div>
+<div class="p-space-xs bg-surface-container-low rounded-DEFAULT">
+<span class="text-on-surface-variant block text-label-sm">Contract Terms:</span>
+<span class="font-headline-sm text-title-md text-on-surface">Hourly / Shift / Monthly</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<a class="flex-1 py-space-sm bg-primary-container hover:bg-on-background text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT text-center transition-colors" href="tel:+917611941567">
+              Dispatch JCB / Excavator
+            </a>
+<a class="px-space-md py-space-sm bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT transition-colors" href="https://wa.me/919314533005?text=Excavator%20Rental%20Booking">
+              Get Rate Sheet
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== RAINWATER HARVESTING & DEEP BOREWELLS ==================== -->
+<section class="w-full bg-surface-container-low py-space-xl" id="water-harvesting">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="max-w-2xl mb-space-lg">
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+<span>Division 04: Environmental Ground Recharge</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">
+          Rainwater Harvesting &amp; Deep Borewells
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Regulatory-compliant groundwater recharge shafts and industrial deep water tapping equipped with precision slotted casing and gravel pack filtration.
+        </p>
+</div>
+<!-- 2-Column Environmental System Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+<!-- RWH System Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded-DEFAULT font-bold">JDA &amp; CGWA Mandate</span>
+<span class="material-symbols-outlined text-secondary">filter_alt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">
+              RWH Recharge Shafts &amp; Desilting Chambers
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Constructed per Jaipur Development Authority (JDA) building bylaws for commercial complexes, group housing, and industrial factories. Complete with multi-layer gravel filter beds, inverted filters, and slotted PVC/MS pipes.
+            </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Bore diameter: 300mm to 450mm with slotted recharge pipe</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Desilting chamber masonry &amp; heavy duty ductile iron gratings</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Official completion certificate support for NOC clearance</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-sm">
+<a class="w-full py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT text-center block transition-colors" href="tel:+919314533005">
+              Schedule Site RWH Feasibility Check
+            </a>
+</div>
+</div>
+<!-- Deep Borewells Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase px-space-xs py-0.5 bg-surface-container text-on-surface rounded-DEFAULT font-bold">Industrial &amp; Agritech</span>
+<span class="material-symbols-outlined text-secondary">water</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">
+              Deep Tube Wells &amp; Industrial Borewells
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              High-depth rotary and DTH percussion boring down to 800+ feet across challenging rock formations. Complete assembly including casing pipe lowering, yield testing, and submersible pump installations.
+            </p>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Depth capability: Up to 800+ Feet (Hard Rock DTH &amp; Mud Rotary)</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Heavy MS / ISI-certified PVC casing installation to arrest collapse</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Discharge yield calculation &amp; compressor air-flushing</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-sm">
+<a class="w-full py-space-xs bg-primary-container hover:bg-on-background text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT text-center block transition-colors" href="tel:+919314533005">
+              Book Borewell Machine
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== DESKTOP INTERACTIVE QUICK RFQ ESTIMATOR ==================== -->
+<section class="w-full bg-surface py-space-xl" id="quotation-calculator">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="bg-primary-container text-on-primary-fixed p-space-lg lg:p-space-xl rounded-DEFAULT shadow-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left: Pitch & Quick Metric Reference -->
+<div class="lg:col-span-5 space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-xs py-0.5 bg-surface-container-lowest/10 text-secondary-container font-label-sm text-label-sm uppercase rounded-DEFAULT">
+<span class="material-symbols-outlined text-[15px]">speed</span>
+<span>Direct Estimator Console</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-surface-bright uppercase font-bold leading-tight">
+              Instant Site RFQ &amp; Rate Estimator
+            </h2>
+<p class="font-body-md text-body-md text-on-primary-container">
+              Receive a customized unit rate or lump-sum project tender quotation directly from our chief civil estimator within 15 minutes.
+            </p>
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-surface-bright">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">verified</span>
+<span>GST-compliant tax invoices &amp; official weighbridge slips</span>
+</div>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-surface-bright">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">verified</span>
+<span>Zero mobilization advance on standard Jaipur urban zones</span>
+</div>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-surface-bright">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">verified</span>
+<span>Soil investigation core analysis support available</span>
+</div>
+</div>
+<!-- Direct Hotline Quick Call Card -->
+<div class="p-space-sm bg-surface-container-lowest/5 rounded-DEFAULT border-0 flex items-center justify-between">
+<div>
+<div class="font-label-sm text-label-sm text-on-primary-container uppercase">Prefer Direct Phone RFQ?</div>
+<div class="font-headline-sm text-headline-sm text-secondary-container">+91 9314533005</div>
+</div>
+<a class="w-10 h-10 bg-secondary-container text-on-secondary-container rounded-DEFAULT flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-colors" href="tel:+919314533005">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</a>
+</div>
+</div>
+<!-- Right: Interactive Calculation Input Matrix -->
+<div class="lg:col-span-7 bg-surface-container-lowest text-on-surface p-space-lg rounded-DEFAULT shadow-md">
+<form class="space-y-space-md" id="rfqForm" onsubmit="event.preventDefault(); document.getElementById('rfqSuccess').classList.remove('hidden');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Category Select -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Required Engineering Service</label>
+<select class="w-full p-space-xs bg-surface-container-low text-on-surface rounded-DEFAULT font-body-md text-body-md focus:bg-surface-container-lowest outline-none" id="rfqService">
+<option value="piling">Rotary Rig Pile Foundation (300mm-1200mm)</option>
+<option value="materials">Bulk Materials Supply (Bajri, Rodi, Cement)</option>
+<option value="breakers">Hydraulic Rock Breaker / JCB Rental</option>
+<option value="borewell">Rainwater Harvesting / Deep Tube Well</option>
+<option value="turnkey">Turnkey Civil Foundation Package</option>
+</select>
+</div>
+<!-- Site Location Select -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Jobsite Location / Corridor</label>
+<select class="w-full p-space-xs bg-surface-container-low text-on-surface rounded-DEFAULT font-body-md text-body-md focus:bg-surface-container-lowest outline-none" id="rfqLocation">
+<option value="jaipur-pratap">Pratap Nagar / Sanganer / Sitapura</option>
+<option value="jaipur-mansarovar">Mansarovar / Ajmer Road / 200ft Bypass</option>
+<option value="jaipur-jagatpura">Jagatpura / Mahal Road / Ramnagaria</option>
+<option value="jaipur-urban">Jaipur Urban / C-Scheme / Civil Lines</option>
+<option value="rajasthan-bhiwadi">Bhiwadi / Neemrana / RIICO Belt</option>
+<option value="rajasthan-other">Other Rajasthan Industrial Hub</option>
+</select>
+</div>
+<!-- Quantity / Dimension -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Est. Piles / Rmt Depth / Quantity</label>
+<input class="w-full p-space-xs bg-surface-container-low text-on-surface rounded-DEFAULT font-body-md text-body-md focus:bg-surface-container-lowest outline-none" placeholder="e.g. 80 Piles @ 600mm dia or 10 Dumpers" required="" type="text"/>
+</div>
+<!-- Contact Mobile -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Site Incharge Contact Number</label>
+<input class="w-full p-space-xs bg-surface-container-low text-on-surface rounded-DEFAULT font-body-md text-body-md focus:bg-surface-container-lowest outline-none" placeholder="+91 9XXXXXXXXX" required="" type="tel"/>
+</div>
+</div>
+<!-- Additional Specifications / Notes -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Project Brief / Soil Details (Optional)</label>
+<textarea class="w-full p-space-xs bg-surface-container-low text-on-surface rounded-DEFAULT font-body-md text-body-md focus:bg-surface-container-lowest outline-none" placeholder="Mention strata type (Hard rock / Clay) or target startup date..." rows="2"></textarea>
+</div>
+<!-- Submission CTA -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
+<span>Direct submission to Senior Geotechnical Engineer</span>
+</div>
+<button class="w-full sm:w-auto px-space-lg py-space-sm bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-headline-sm text-title-md uppercase tracking-wider rounded-DEFAULT shadow-md flex items-center justify-center gap-space-xs transition-colors" type="submit">
+<span>Submit for Instant Ratecard</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<!-- Interactive Confirmation Banner -->
+<div class="hidden p-space-sm bg-surface-container-highest text-on-surface rounded-DEFAULT flex items-center gap-space-xs" id="rfqSuccess">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Inquiry received. Senior Rig Dispatcher is reviewing your specifications and will call back immediately.</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== REGISTERED HEADQUARTERS & FIELD HUB ==================== -->
+<section class="w-full bg-surface-container-low py-space-xl" id="contact-us">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="max-w-2xl mb-space-lg">
+<div class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">home_pin</span>
+<span>Division 05: Operational Base &amp; Dispatch Matrix</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase font-bold">
+          Registered Headquarters &amp; Field Contact Hub
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Centrally located in Jaipur's southern infrastructure artery for rapid machinery transit to Sitapura, Mansarovar, Mahindra World City, and regional highway packages.
+        </p>
+</div>
+<!-- Wide 2-Column Physical Base Presentation -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left: Address & Multi-Department Telephone Matrix -->
+<div class="lg:col-span-6 space-y-space-md">
+<!-- Registered Office Badge Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 bg-primary-container text-secondary-container flex items-center justify-center rounded-DEFAULT shrink-0">
+<span class="material-symbols-outlined text-[28px]">apartment</span>
+</div>
+<div class="space-y-1">
+<div class="font-label-sm text-label-sm uppercase text-secondary font-bold">Principal Office &amp; Central Yard</div>
+<div class="font-headline-sm text-headline-sm text-on-surface uppercase">M/s S.K. ASSOCIATES</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  114/94, Pratap Nagar, Sanganer,<br/>
+                  Jaipur, Rajasthan – 302033 (India)
+                </p>
+<div class="pt-space-xs font-label-sm text-label-sm text-on-surface">
+<span class="font-bold">GSTIN:</span> 08AYJPS3327B1ZH
+                </div>
+</div>
+</div>
+</div>
+<!-- Direct Line Communication Channels (Structured Matrix) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm space-y-space-sm">
+<div class="font-label-md text-label-md uppercase tracking-wider text-on-surface pb-space-xs">
+              Direct Field Dispatch Matrix
+            </div>
+<!-- Hotline 1 -->
+<div class="flex items-center justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Principal Hotline / Chief Dispatch</div>
+<div class="font-headline-sm text-title-md text-on-surface font-bold">+91 9314533005</div>
+</div>
+<a class="px-space-md py-space-xs bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary rounded-DEFAULT font-label-sm text-label-sm uppercase transition-colors" href="tel:+919314533005">
+                Call Now
+              </a>
+</div>
+<!-- Hotline 2 -->
+<div class="flex items-center justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Geotechnical Site Operations</div>
+<div class="font-headline-sm text-title-md text-on-surface font-bold">+91 7357185811</div>
+</div>
+<a class="px-space-md py-space-xs bg-surface-container hover:bg-surface-variant text-on-surface rounded-DEFAULT font-label-sm text-label-sm uppercase transition-colors" href="tel:+917357185811">
+                Call Now
+              </a>
+</div>
+<!-- Hotline 3 -->
+<div class="flex items-center justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Heavy Machinery &amp; Fleet Hire Desk</div>
+<div class="font-headline-sm text-title-md text-on-surface font-bold">+91 7611941567</div>
+</div>
+<a class="px-space-md py-space-xs bg-surface-container hover:bg-surface-variant text-on-surface rounded-DEFAULT font-label-sm text-label-sm uppercase transition-colors" href="tel:+917611941567">
+                Call Now
+              </a>
+</div>
+<!-- Email Strip -->
+<div class="flex items-center justify-between p-space-xs bg-surface-container-low rounded-DEFAULT">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tenders &amp; Billing Email</div>
+<div class="font-body-md text-body-md text-on-surface select-all">sunilkumarsinghjr@gmail.com</div>
+</div>
+<a class="px-space-md py-space-xs bg-surface-container hover:bg-surface-variant text-on-surface rounded-DEFAULT font-label-sm text-label-sm uppercase transition-colors" href="mailto:sunilkumarsinghjr@gmail.com">
+                Mail Desk
+              </a>
+</div>
+</div>
+</div>
+<!-- Right: Interactive Style Jaipur Site Location Map Card -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Jaipur Regional Depot &amp; Yard</span>
+<span class="material-symbols-outlined text-on-surface-variant">pin_drop</span>
+</div>
+<div class="font-headline-sm text-title-md text-on-surface uppercase mb-space-sm">
+              Sanganer &amp; Pratap Nagar Dispatch Depot
+            </div>
+<!-- Map View Container with data-location -->
+<div class="w-full h-80 bg-surface-container rounded-DEFAULT overflow-hidden relative shadow-inner" data-location="Pratap Nagar, Sanganer, Jaipur, Rajasthan 302033" style="background-image: url('./image copy 2.png'); background-size: cover; background-position: center;">
+<!-- Map Card Floating Indicator -->
+<div class="absolute bottom-space-md left-space-md right-space-md bg-surface-container-lowest/95 backdrop-blur p-space-sm rounded-DEFAULT shadow-md flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">location_on</span>
+<div>
+<div class="font-headline-sm text-label-sm text-on-surface uppercase">Pratap Nagar Heavy Yard</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Tonk Road / Ring Road Expressway Confluence</div>
+</div>
+</div>
+<a class="px-space-sm py-1 bg-primary-container text-on-primary-fixed rounded-DEFAULT font-label-sm text-label-sm uppercase hover:bg-on-background transition-colors" href="https://maps.google.com/?q=Pratap+Nagar+Sanganer+Jaipur+Rajasthan" rel="noopener noreferrer" target="_blank">
+                  Open Maps
+                </a>
+</div>
+</div>
+</div>
+<!-- Quick Directions Footer Note -->
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Direct low-bed trailer access via Tonk Road highway slip</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Yard Operational 24/7</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple micro-interaction for quick RFQ feedback
+  document.addEventListener('DOMContentLoaded', function() {
+    const rfqForm = document.getElementById('rfqForm');
+    const rfqSuccess = document.getElementById('rfqSuccess');
+    if (rfqForm && rfqSuccess) {
+      rfqForm.addEventListener('submit', function() {
+        rfqSuccess.classList.remove('hidden');
+        setTimeout(() => {
+          rfqSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      });
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navigation = document.querySelector('header nav');
+    if (!navigation) return;
+
+    const serviceRoutes = {
+      'pile-foundations': 'services',
+      'building-materials': 'building-materials',
+      'machinery-rental': 'machinery-rental',
+      'water-harvesting': 'water-harvesting'
+    };
+    const serviceSections = Object.values(serviceRoutes)
+      .map(function (id) { return document.getElementById(id); })
+      .filter(Boolean);
+    const currentPage = new URLSearchParams(window.location.search).get('page');
+    const currentServiceKey = new URLSearchParams(window.location.search).get('service');
+    const requestedService = serviceRoutes[currentServiceKey];
+    const pageSectionIds = {
+      work: 'our-work',
+      about: 'about-us'
+    };
+    const activePageSectionId = requestedService || pageSectionIds[currentPage];
+
+    serviceSections.forEach(function (section) {
+      section.hidden = true;
+    });
+
+    if (activePageSectionId) {
+      document.querySelectorAll('main section').forEach(function (section) {
+        section.hidden = section.id !== activePageSectionId;
+      });
+    } else {
+      const aboutSection = document.getElementById('about-us');
+      if (aboutSection) aboutSection.hidden = true;
+    }
+
+    const serviceLinks = [
+      { label: 'Pile Foundations', href: '?service=pile-foundations#services' },
+      { label: 'Building Materials', href: '?service=building-materials#building-materials' },
+      { label: 'Machinery Rental', href: '?service=machinery-rental#machinery-rental' },
+      { label: 'Water Harvesting & Borewells', href: '?service=water-harvesting#water-harvesting' }
+    ];
+    const navItems = [
+      { label: 'Home', href: './index.html' },
+      { label: 'Services', submenu: serviceLinks },
+      { label: 'Our Work', href: '?page=work#our-work' },
+      { label: 'About Us', href: '?page=about' },
+      { label: 'FAQs', href: '#faqs' }
+    ];
+
+    navigation.className = 'main-navigation';
+    navigation.replaceChildren.apply(navigation, navItems.map(function (item) {
+      if (item.submenu) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'services-nav-item';
+
+        const toggle = document.createElement('button');
+        toggle.className = 'nav-link services-menu-toggle text-on-surface-variant hover:text-on-surface transition-colors';
+        toggle.type = 'button';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-haspopup', 'true');
+        toggle.textContent = item.label;
+        const arrow = document.createElement('span');
+        arrow.className = 'material-symbols-outlined';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = 'expand_more';
+        toggle.appendChild(arrow);
+
+        const dropdown = document.createElement('div');
+        dropdown.className = 'services-dropdown';
+        dropdown.setAttribute('role', 'menu');
+        dropdown.replaceChildren.apply(dropdown, item.submenu.map(function (service) {
+          const link = document.createElement('a');
+          link.href = service.href;
+          link.textContent = service.label;
+          link.setAttribute('role', 'menuitem');
+          return link;
+        }));
+
+        toggle.addEventListener('click', function () {
+          const isOpen = wrapper.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+          if (isOpen) {
+            requestAnimationFrame(function () {
+              const toggleBounds = toggle.getBoundingClientRect();
+              const menuBounds = dropdown.getBoundingClientRect();
+              const left = Math.min(
+                Math.max(8, toggleBounds.left),
+                window.innerWidth - menuBounds.width - 8
+              );
+              const top = Math.min(
+                toggleBounds.bottom + 8,
+                window.innerHeight - menuBounds.height - 8
+              );
+              dropdown.style.left = left + 'px';
+              dropdown.style.top = Math.max(8, top) + 'px';
+            });
+          }
+        });
+        dropdown.addEventListener('click', function (event) {
+          if (event.target.closest('a')) {
+            wrapper.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+        wrapper.appendChild(toggle);
+        wrapper.appendChild(dropdown);
+        return wrapper;
+      }
+
+      const link = document.createElement('a');
+      link.className = 'nav-link text-on-surface-variant hover:text-on-surface transition-colors';
+      link.href = item.href;
+      link.textContent = item.label;
+      return link;
+    }));
+
+    const currentHash = window.location.hash;
+    const currentTopLink = Array.from(navigation.querySelectorAll(':scope > a')).find(function (link) {
+      const linkUrl = new URL(link.href);
+      if (linkUrl.pathname !== window.location.pathname) return false;
+      return linkUrl.hash === currentHash && (linkUrl.searchParams.get('page') || null) === currentPage;
+    });
+    if (currentTopLink) {
+      currentTopLink.classList.add('is-current');
+      currentTopLink.setAttribute('aria-current', 'page');
+    } else if (!serviceRoutes[currentServiceKey]) {
+      const homeLink = navigation.querySelector(':scope > a[href="./index.html"]');
+      if (homeLink) {
+        homeLink.classList.add('is-current');
+        homeLink.setAttribute('aria-current', 'page');
+      }
+    }
+
+    if (requestedService) {
+      const selectedSection = document.getElementById(requestedService);
+      if (selectedSection) {
+        selectedSection.scrollIntoView({ block: 'start' });
+      }
+    } else if (activePageSectionId) {
+      window.scrollTo(0, 0);
+    }
+
+    if (currentServiceKey && serviceRoutes[currentServiceKey]) {
+      const servicesButton = navigation.querySelector('.services-menu-toggle');
+      const selectedServiceLink = Array.from(navigation.querySelectorAll('.services-dropdown a')).find(function (link) {
+        return new URL(link.href).searchParams.get('service') === currentServiceKey;
+      });
+      if (servicesButton) {
+        servicesButton.classList.add('is-current');
+        servicesButton.setAttribute('aria-current', 'page');
+      }
+      if (selectedServiceLink) {
+        selectedServiceLink.setAttribute('aria-current', 'page');
+      }
+    }
+
+    navigation.addEventListener('click', function (event) {
+      const selectedLink = event.target.closest('.main-navigation > a');
+      if (!selectedLink) return;
+      navigation.querySelectorAll(':scope > a.is-current, .services-menu-toggle.is-current').forEach(function (link) {
+        link.classList.remove('is-current');
+        link.removeAttribute('aria-current');
+      });
+      selectedLink.classList.add('is-current');
+      selectedLink.setAttribute('aria-current', 'page');
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!navigation.contains(event.target)) {
+        const openMenu = navigation.querySelector('.services-nav-item.is-open');
+        if (!openMenu) return;
+        openMenu.classList.remove('is-open');
+        openMenu.querySelector('.services-menu-toggle').setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    navigation.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      const openMenu = navigation.querySelector('.services-nav-item.is-open');
+      if (!openMenu) return;
+      openMenu.classList.remove('is-open');
+      const toggle = openMenu.querySelector('.services-menu-toggle');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    });
+
+    const quickActions = navigation.nextElementSibling;
+    if (quickActions) quickActions.hidden = true;
+    const emptyActions = navigation.parentElement.lastElementChild;
+    if (emptyActions && !emptyActions.textContent.trim()) emptyActions.hidden = true;
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const gallery = document.getElementById('project-gallery-grid');
+    const galleryFrame = document.getElementById('project-gallery');
+    const carousel = document.getElementById('home-project-carousel-track');
+    const counter = document.getElementById('project-gallery-counter');
+    const previousButton = document.getElementById('home-project-carousel-previous');
+    const nextButton = document.getElementById('home-project-carousel-next');
+    if (!gallery || !galleryFrame || !carousel || !counter || !previousButton || !nextButton) return;
+
+    const files = [
+      'image.png',
+      'image copy.png',
+      'image copy 2.png',
+      'image copy 3.png',
+      'image copy 4.png',
+      'image copy 5.png',
+      'image copy 6.png',
+      'image copy 7.png',
+      'image copy 8.png',
+      'image copy 9.png',
+      'image copy 10.png',
+      'image copy 11.png',
+      'image copy 12.png',
+      'image copy 13.png',
+      'image copy 14.png',
+      'image copy 15.png',
+      'image copy 16.png',
+      'image copy 17.png',
+      'image copy 18.png',
+      'image copy 19.png',
+      'image copy 20.png',
+      'image copy 21.png',
+      'image copy 22.png',
+      'image copy 23.png',
+      'image copy 24.png',
+      'image copy 25.png',
+      'image copy 26.png',
+      'WhatsApp Video 2026-10-12 at 12.53.30 PM (1).mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.31 PM (1).mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.32 PM (1).mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.44 PM.mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.46 PM (1).mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.46 PM.mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.47 PM.mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.49 PM (1).mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.49 PM.mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.50 PM copy.mp4',
+      'WhatsApp Video 2026-10-12 at 12.53.50 PM.mp4'
+    ];
+    const photoFiles = files.filter(function (fileName) {
+      return !/\.mp4$/i.test(fileName);
+    });
+    function createSlide(fileName, index) {
+      const slide = document.createElement('div');
+      slide.className = 'project-slide';
+      slide.setAttribute('aria-label', 'Project media ' + (index + 1) + ' of ' + files.length);
+      const isVideo = /\.mp4$/i.test(fileName);
+      const mediaSource = './' + encodeURIComponent(fileName);
+
+      if (isVideo) {
+        const video = document.createElement('video');
+        video.className = 'project-media';
+        video.muted = true;
+        video.playsInline = true;
+        video.controls = false;
+        video.preload = 'none';
+        video.poster = './' + encodeURIComponent(photoFiles[index % photoFiles.length]);
+
+        const source = document.createElement('source');
+        source.src = mediaSource;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+        slide.appendChild(video);
+        const playButton = document.createElement('button');
+        playButton.className = 'video-preview-play';
+        playButton.type = 'button';
+        playButton.setAttribute('aria-label', 'Play project video: ' + fileName);
+        playButton.innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
+        playButton.addEventListener('click', function () {
+          video.controls = true;
+          video.preload = 'auto';
+          video.load();
+          video.play().catch(function () {
+            slide.classList.remove('is-playing');
+            video.controls = true;
+          });
+        });
+        slide.appendChild(playButton);
+      } else {
+        const image = document.createElement('img');
+        image.src = mediaSource;
+        image.alt = 'SK Associates project photo: ' + fileName.replace(/\.[^.]+$/, '');
+        image.loading = 'eager';
+        image.decoding = 'async';
+        slide.appendChild(image);
+      }
+
+      return slide;
+    }
+    const slides = files.map(createSlide);
+
+    const carouselSlides = files.map(createSlide);
+    const duplicateSlides = carouselSlides.map(function (slide) {
+      const duplicate = slide.cloneNode(true);
+      duplicate.setAttribute('aria-hidden', 'true');
+      duplicate.style.pointerEvents = 'none';
+      return duplicate;
+    });
+
+    gallery.replaceChildren.apply(gallery, slides);
+    carousel.style.setProperty('--project-carousel-duration', (files.length * 3) + 's');
+    carousel.replaceChildren.apply(carousel, carouselSlides.concat(duplicateSlides));
+    counter.textContent = files.length + ' PROJECT PHOTOS & VIDEOS';
+    function moveOneMedia(direction) {
+      const animation = carousel.getAnimations()[0];
+      if (!animation) return;
+
+      const duration = Number(animation.effect.getTiming().duration);
+      const step = duration / files.length;
+      const currentTime = Number(animation.currentTime) || 0;
+      animation.currentTime = (currentTime + direction * step + duration) % duration;
+      animation.play();
+    }
+
+    previousButton.addEventListener('click', function () {
+      moveOneMedia(-1);
+    });
+    nextButton.addEventListener('click', function () {
+      moveOneMedia(1);
+    });
+    [gallery, carousel].forEach(function (track) {
+      track.querySelectorAll('video').forEach(function (video) {
+        video.addEventListener('play', function () {
+          video.closest('.project-slide').classList.add('is-playing');
+          if (track === carousel) track.style.animationPlayState = 'paused';
+        });
+        video.addEventListener('pause', function () {
+          video.closest('.project-slide').classList.remove('is-playing');
+          if (track === carousel) track.style.animationPlayState = 'running';
+        });
+        video.addEventListener('ended', function () {
+          video.closest('.project-slide').classList.remove('is-playing');
+          video.currentTime = 0;
+          if (track === carousel) track.style.animationPlayState = 'running';
+        });
+      });
+    });
+  });
+</script></main><footer class="w-full bg-primary-container text-on-primary-fixed border-t-4 border-secondary-container"><div class="max-w-7xl mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="space-y-space-md"><div class="flex items-center gap-space-xs"><img alt="SK Associates logo" class="w-16 h-16 object-contain" src="./logo.png"/><span class="font-headline-sm text-headline-sm text-surface-bright uppercase">M/s S.K. ASSOCIATES</span></div><p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">Rajasthan's leading civil foundation, bored cast-in-situ piling contractor, heavy machinery rental operator, and bulk construction materials supplier.</p><div class="p-space-sm bg-primary/40 rounded-DEFAULT border border-on-primary-container/20 space-y-space-xs"><div class="font-label-sm text-label-sm uppercase text-secondary-container tracking-wider">Verified GSTIN Compliance</div><div class="font-label-md text-label-md text-surface-bright">08AYJPS3327B1ZH</div><div class="font-body-sm text-body-sm text-on-primary-container">Regd under Commercial Taxes Dept, Jaipur</div></div></div><div class="space-y-space-md"><div class="font-label-lg text-label-lg text-surface-bright uppercase tracking-wider border-b border-on-primary-container/20 pb-space-xs">Engineering Divisions</div><ul class="space-y-space-xs font-body-sm text-body-sm text-on-primary-container"><li><a class="hover:text-secondary-container transition-colors" data-path="pile-foundations" href="#">Rotary Rig Piling (450mm - 1200mm)</a></li><li><a class="hover:text-secondary-container transition-colors" data-path="pile-foundations" href="#">DMC Bored Cast-in-Situ Foundations</a></li><li><a class="hover:text-secondary-container transition-colors" data-path="machinery-rental" href="#">Hydraulic Rigs &amp; Excavator Rental</a></li><li><a class="hover:text-secondary-container transition-colors" data-path="water-harvesting-and-borewells" href="#">RWH Wells &amp; Deep Industrial Borewells</a></li><li><a class="hover:text-secondary-container transition-colors" data-path="building-materials" href="#">Coarse Aggregate, Grit, River Sand &amp; M-Sand</a></li><li><a class="hover:text-secondary-container transition-colors" data-path="building-materials" href="#">Ready Mix Concrete Logistics Support</a></li></ul></div><div class="space-y-space-md"><div class="font-label-lg text-label-lg text-surface-bright uppercase tracking-wider border-b border-on-primary-container/20 pb-space-xs">Headquarters &amp; Dispatch</div><div class="space-y-space-sm font-body-sm text-body-sm text-on-primary-container"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary-container shrink-0 mt-0.5">location_on</span><span>Pratap Nagar, Near Sanganer Industrial Belt, Jaipur, Rajasthan - 302033</span></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary-container shrink-0 mt-0.5">call</span><div class="flex flex-col"><a class="text-surface-bright hover:text-secondary-container font-label-md text-label-md" href="tel:+919314533005">+91 9314533005 (Dispatch)</a><a class="hover:text-secondary-container font-label-md text-label-md" href="tel:+917357185811">+91 7357185811 (Engineering)</a><a class="hover:text-secondary-container font-label-md text-label-md" href="tel:+917611941567">+91 7611941567 (Accounts)</a></div></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-secondary-container shrink-0 mt-0.5">mail</span><a class="hover:text-secondary-container break-all" href="mailto:sunilkumarsinghjr@gmail.com">sunilkumarsinghjr@gmail.com</a></div></div></div><div class="space-y-space-md"><div class="font-label-lg text-label-lg text-surface-bright uppercase tracking-wider border-b border-on-primary-container/20 pb-space-xs">Operational Reach</div><p class="font-body-sm text-body-sm text-on-primary-container">Mobilizing heavy rigs, survey equipment, and concrete machinery across Northern &amp; Western infrastructure corridors:</p><div class="flex flex-wrap gap-space-xs"><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Jaipur Urban</span><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Sitapura Industrial</span><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Bhiwadi</span><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Ajmer</span><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Kota</span><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Jodhpur</span><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Udaipur</span><span class="px-space-xs py-0.5 bg-primary/40 rounded-DEFAULT font-label-sm text-label-sm text-on-primary-fixed">Neemrana RIICO</span></div><div class="pt-space-xs"><span class="font-label-sm text-label-sm uppercase text-secondary-container flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">speed</span> Mobilization Time: 24 - 48 Hours</span></div></div></div><div class="mt-space-xl pt-space-lg border-t border-on-primary-container/20 flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-primary-container"><div>© 2025 M/s S.K. ASSOCIATES. All Technical &amp; Field Rights Reserved.</div><div class="flex items-center gap-space-lg font-label-sm text-label-sm uppercase tracking-wider"><a class="hover:text-surface-bright transition-colors" data-path="about-and-fleet" href="#">Machinery Spec Sheets</a><a class="hover:text-surface-bright transition-colors" data-path="contact" href="#">Tender Cell</a><a class="hover:text-surface-bright transition-colors" data-path="contact" href="#">Safety Protocol (QHSE)</a></div></div></div></footer></body></html>
